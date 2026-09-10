@@ -10,6 +10,9 @@ import Cart from './cart/Cart'
 import Checkout from './checkout/Checkout'
 import NotFound from './NotFound'
 
+// ================================
+import { getDishes } from './api/dishes'
+
 const App = () => {
   return (
     <>
