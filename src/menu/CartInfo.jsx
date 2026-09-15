@@ -2,9 +2,11 @@ import React from "react";
 import { useCart } from "../cart/CartContext";
 import Button from "../ui/Button";
 import { FaArrowRight, FaBagShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const CartInfo = () => {
     const { cart, total } = useCart();
+    const navigate = useNavigate();
   return (
     <>
       {cart.length !== 0 && (
