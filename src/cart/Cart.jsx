@@ -7,14 +7,18 @@ import LeftCartContent from "./LeftCartContent";
 import RightCartContent from "./RightCartContent";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../ui/Spinner";
+import ClearCartConfirmation from "./ClearCartConfirmation";
+import EmptyCartState from "./EmptyCartState";
 
 const Cart = () => {
   const { cart, onAddToCart } = useCart();
   const navigate = useNavigate();
   const [showSpinner, setShowSpinner] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Clear cart table
   const handleClearTable = () => {
+    setShowConfirm(false);
     setShowSpinner(true);
 
     setTimeout(() => {
@@ -23,24 +27,23 @@ const Cart = () => {
     }, 2000);
   };
 
+  // Show Confirmation
+  if (showConfirm) {
+    return (
+      <ClearCartConfirmation
+        onClose={() => setShowConfirm(false)}
+        onConfirm={handleClearTable}
+      />
+    );
+  }
+
   // Loading state
   if (showSpinner) {
     return <Spinner />;
   }
 
   if (cart.length === 0) {
-    return (
-      <section className="flex flex-col items-center justify-center gap-8 h-screen">
-        <p className="text-xl">
-          Your cart is empty. Dishes you add to order will apear here.
-        </p>
-        <div>
-          <Button color="brand" onClick={() => navigate("/menu")}>
-            Back to Menu
-          </Button>
-        </div>
-      </section>
-    );
+    return <EmptyCartState/>
   }
 
   return (
@@ -76,7 +79,7 @@ const Cart = () => {
       {/* Grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {/* Left content */}
-        <LeftCartContent onClearTable={handleClearTable} />
+        <LeftCartContent onClearTable={() => setShowConfirm(true)} />
 
         {/* Right content */}
         <RightCartContent />
