@@ -43,7 +43,12 @@ const Cart = () => {
   }
 
   if (cart.length === 0) {
-    return <EmptyCartState/>
+    return (
+      <EmptyCartState
+        message="Dishes you add to your order will appear here. Explore our menu to find
+        your favorite meals."
+      />
+    );
   }
 
   return (
