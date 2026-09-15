@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 
-const EmptyCartState = () => {
+const EmptyCartState = ({ message }) => {
   const navigate = useNavigate();
   return (
     <section className="text-center p-2 flex flex-col items-center justify-center h-screen">
@@ -12,8 +12,7 @@ const EmptyCartState = () => {
       <h3 className="text-lg font-bold text-gray-900">Your cart is empty</h3>
 
       <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-        Dishes you add to your order will appear here. Explore our menu to find
-        your favorite meals.
+        {message}
       </p>
 
       <div className="mt-6">
