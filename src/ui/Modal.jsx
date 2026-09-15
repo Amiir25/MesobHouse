@@ -1,19 +1,16 @@
 import React from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-const Modal = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return;
+const Modal = ({ onClose, children }) => {
 
   return (
     <section
       onClick={onClose}
-      className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center
-      bg-black/80"
+      className="fixed inset-0 flex items-center justify-center bg-black/80 transition-all duration-200"
     >
-      <div
+      <div 
         onClick={(e) => e.stopPropagation()}
-        className="border w-75 h-60 relative bg-white rounded"
-      >
+        className="relative bg-white rounded w-[90%] max-w-120 py-8">
         {/* Close Icon */}
         <IoIosCloseCircleOutline
           onClick={onClose}
