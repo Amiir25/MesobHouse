@@ -23,6 +23,9 @@ const Button = ({
     case "brand":
       btnDecore = "bg-brand text-white w-full shadow-xl";
       break;
+    case "red":
+      btnDecore = "bg-red-600 text-white";
+      break;
     default:
       return "Button color not provided"
   }
@@ -33,7 +36,7 @@ const Button = ({
       onClick={onClick}
       className={
         `py-[0.3em] px-[1em] rounded-lg hover:scale-105 active:scale-100 transition-scale duration-200
-        flex items-center gap-2 justify-center ${btnDecore} ${primary && 'w-full'} group`
+        flex items-center gap-2 justify-center ${btnDecore} ${primary && 'w-full'} group cursor-pointer`
       }
     >
       {children}
