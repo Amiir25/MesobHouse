@@ -1,6 +1,6 @@
 import React from "react";
 import useFetchDishes from "../hooks/useFetchDishes";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   FaBagShopping,
   FaCircle,
@@ -15,6 +15,7 @@ import {
   FaUsers,
 } from "react-icons/fa6";
 import Button from "../ui/Button";
+import NotFound from "../NotFound";
 
 // Spicy level
 const spicyLevels = [
@@ -64,11 +65,15 @@ const sideAccents = [
 const DishDetail = () => {
   const { dishes, loading, error } = useFetchDishes();
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const selectedDish = dishes.find((dish) => dish.slug === slug);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
+
+  // 404 for empty dish
+  if (!selectedDish) return <NotFound type="dish" />;
 
   return (
     <main className="px-2 md:px-8 lg:px-18 mt-18">
@@ -77,7 +82,11 @@ const DishDetail = () => {
         <div className="hidden md:block">
           {/* Big image */}
           <section>
-            <img src="/src/assets/dish-images/doro-wet.jpg" alt="" className="rounded" />
+            <img
+              src="/src/assets/dish-images/doro-wet.jpg"
+              alt=""
+              className="rounded"
+            />
           </section>
           {/* Small images */}
           <section className="flex items-center gap-4 mt-2">
@@ -278,11 +287,11 @@ const DishDetail = () => {
           <div className="flex items-center gap-2">
             <FaHandHoldingHeart className="w-14 h-10 bg-light-yellow text-dark-yellow p-2 rounded-lg" />
             <div>
-              <p className="font-semibold">
-                The Spirit of Gursha
-              </p>
+              <p className="font-semibold">The Spirit of Gursha</p>
               <p className="text-xs md:text-sm">
-                Sharing a bite directly into a companion's mouth is an act of deep hospitality and bond. Ask your server for communal Mesob presentation.
+                Sharing a bite directly into a companion's mouth is an act of
+                deep hospitality and bond. Ask your server for communal Mesob
+                presentation.
               </p>
             </div>
           </div>
