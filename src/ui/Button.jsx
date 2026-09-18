@@ -5,7 +5,8 @@ const Button = ({
   onClick,
   color,
   primary,
-  type
+  type,
+  disabled
 }) => {
   
   // Dynamic button decoration
@@ -33,10 +34,12 @@ const Button = ({
   return (
     <button
       type={type ? "submit" : "button"}
+      disabled={disabled}
       onClick={onClick}
       className={
         `py-[0.3em] px-[1em] rounded-lg hover:scale-105 active:scale-100 transition-scale duration-200
-        flex items-center gap-2 justify-center ${btnDecore} ${primary && 'w-full'} group cursor-pointer`
+        flex items-center gap-2 justify-center group cursor-pointer
+        ${btnDecore} ${primary && 'w-full'} ${disabled && "bg-red-300"}`
       }
     >
       {children}
