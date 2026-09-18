@@ -43,9 +43,9 @@ const Login = () => {
 
 
   return (
-    <section className="bg-[#FFF1EB] md:px-8 lg:px-14 py-18">
+    <main className="bg-[#FFF1EB] md:px-8 lg:px-14 py-18">
       {/* Welcome Back */}
-      <div className="flex items-center justify-center md:justify-end mb-8">
+      <section className="flex items-center justify-center md:justify-end mb-8">
         <p
           className="bg-[#F0DFD8] text-dark-yellow flex items-center gap-2 text-[10px] lg:text-sm
             w-fit py-1 px-4 rounded-xl"
@@ -53,10 +53,10 @@ const Login = () => {
           <FaDotCircle />
           <span>Welcome Back to Our Table</span>
         </p>
-      </div>
+      </section>
 
       {/* ================== */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <section className="grid md:grid-cols-2 gap-8">
         {/* Left Content */}
         <div className="hidden md:block">
           <LoginLeftContent />
@@ -64,8 +64,8 @@ const Login = () => {
 
         {/* Right Content */}
         <LoginRightContent/>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 
