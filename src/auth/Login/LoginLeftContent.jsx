@@ -33,7 +33,7 @@ const lists = [
   },
 ];
 
-const LoginLeft = () => {
+const LoginLeftContent = () => {
   return (
     <section className="bg-[#FCE3CE] rounded-lg py-10 px-4 lg:px-8 flex flex-col items- gap-4">
       {/*  */}
@@ -99,4 +99,4 @@ const LoginLeft = () => {
   );
 };
 
-export default LoginLeft;
+export default LoginLeftContent;
