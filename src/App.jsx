@@ -13,55 +13,58 @@ import NotFound from "./NotFound";
 import RequireAuth from "./auth/RequireAuth";
 import AuthProvider from "./auth/AuthContext";
 import CartProvider from "./cart/CartContext";
+import PopupProvider from "./ui/PopupContext";
 
 const App = () => {
   return (
     <>
       <AuthProvider>
         <CartProvider>
-          <Routes>
-            <Route path="/" element={<RootLayout />}>
-              {/* Public Routes */}
-              <Route index element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="*" element={<NotFound type="page" />} />
+          <PopupProvider>
+            <Routes>
+              <Route path="/" element={<RootLayout />}>
+                {/* Public Routes */}
+                <Route index element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="*" element={<NotFound type="page" />} />
 
-              {/* Protected Routes */}
-              <Route
-                path="/menu"
-                element={
-                  <RequireAuth>
-                    <Menu />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/menu/:slug"
-                element={
-                  <RequireAuth>
-                    <DishDetail />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/cart"
-                element={
-                  <RequireAuth>
-                    <Cart />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/checkout"
-                element={
-                  <RequireAuth>
-                    <Checkout />
-                  </RequireAuth>
-                }
-              />
-            </Route>
-          </Routes>
+                {/* Protected Routes */}
+                <Route
+                  path="/menu"
+                  element={
+                    <RequireAuth>
+                      <Menu />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/menu/:slug"
+                  element={
+                    <RequireAuth>
+                      <DishDetail />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/cart"
+                  element={
+                    <RequireAuth>
+                      <Cart />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/checkout"
+                  element={
+                    <RequireAuth>
+                      <Checkout />
+                    </RequireAuth>
+                  }
+                />
+              </Route>
+            </Routes>
+          </PopupProvider>
         </CartProvider>
       </AuthProvider>
     </>
