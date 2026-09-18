@@ -3,7 +3,6 @@ import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../../ui/Button";
-import { validateForm } from "../FormValidation";
 import { emailLoginSchema, phoneLoginSchema } from "../schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
