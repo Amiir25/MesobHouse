@@ -8,11 +8,15 @@ const PopupProvider = ({ children }) => {
 
     const handlePopup = (type, message) => {
         setPopup({ type, message });
+
+        setTimeout(() => {
+            setPopup(null);
+        }, 3000);
     }
     return (
         <PopupContext.Provider value={{ handlePopup }}>
             {children}
-            {popup && <Popup type={popup.type} message={popup.message} />}
+            {popup && <Popup showPopup={true} type={popup.type} message={popup.message} />}
         </PopupContext.Provider>
     )
 }
