@@ -3,8 +3,12 @@ import { BiCloudDownload } from "react-icons/bi";
 import { LuSquareUser } from "react-icons/lu";
 import { MdMyLocation } from "react-icons/md";
 import { RiSendPlaneLine } from "react-icons/ri";
+import { useAuth } from "../auth/AuthContext";
 
 const CheckoutForm = () => {
+  const { currentUser } = useAuth();
+  const { name, phone, email } = currentUser;
+
   return (
     <>
       {/* Contact & Guest Details */}
@@ -25,7 +29,7 @@ const CheckoutForm = () => {
               <input
                 type="text"
                 id="name"
-                value={"Name"}
+                value={name}
                 className="p-2 bg-light-red rounded"
               />
             </label>
@@ -34,7 +38,7 @@ const CheckoutForm = () => {
               <input
                 type="tel"
                 id="phone"
-                value={"+251"}
+                value={phone}
                 className="p-2 bg-light-red rounded"
               />
             </label>
@@ -47,7 +51,7 @@ const CheckoutForm = () => {
             <input
               type="email"
               id="email"
-              value={"youremail@"}
+              value={email}
               className="p-2 bg-light-red rounded"
             />
           </label>
