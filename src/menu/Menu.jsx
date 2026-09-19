@@ -18,8 +18,7 @@ import CartInfo from "./CartInfo";
 
 const Menu = () => {
   // ---
-  const { dishes, error } = useFetchDishes();
-  const loading = true;
+  const { dishes, loading, error } = useFetchDishes();
 
   // ---
   const [searchTerm, setSearchTerm] = useState("");
