@@ -10,7 +10,7 @@ const LoginRightContent = () => {
   const [activeBtn, setActiveBtn] = useState("phone");
 
   return (
-    <div className="bg-white py-20 px-2 lg:px-8 rounded-lg">
+    <div className="bg-white py-20 px-2 lg:px-8 m-2 rounded-lg">
       <p className="text-xs lg:text-sm text-brand">Member Portal</p>
       <h2 className="text-2xl lg:text-5xl">Welcome to the Mesob Table</h2>
       <p className="text-xs lg:text-lg leading-tight mt-1 text-light-text font-light">
