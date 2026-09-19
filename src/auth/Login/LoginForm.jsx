@@ -10,14 +10,16 @@ import Popup from "../../ui/Popup";
 import { BsPatchCheck } from "react-icons/bs";
 import Spinner from "../../ui/Spinner";
 import { usePopup } from "../../ui/PopupContext";
+import { useAuth } from "../AuthContext";
 
 const LoginForm = ({ activeBtn }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [showErrorMsg, setShowErrorMsg] = useState(false);
-
   const [showSpinner, setShowSpinner] = useState(false);
+
   const { handlePopup } = usePopup();
+  const { handlePhoneLogin, handleEmailLogin } = useAuth();
 
   // Routing states
   const location = useLocation();
@@ -38,6 +40,13 @@ const LoginForm = ({ activeBtn }) => {
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
+    const success =
+      activeBtn === "phone"
+        ? handlePhoneLogin(data)
+        : handleEmailLogin(data);
+
+    if (!success) return;
+    
     setShowSpinner(true);
 
     setTimeout(() => {
