@@ -97,6 +97,17 @@ const AuthProvider = ({ children }) => {
     return true;
   };
 
+  // Handle logout
+  const logout = () => {
+    // clear states
+    setCurrentUser(null);
+    setIsAuthenticated(false);
+
+    // Clear local storage
+    localStorage.removeItem("savedCart");
+    localStorage.removeItem("currentUser");
+  }
+
   // Update userDB
   useEffect(() => {
     localStorage.setItem("userDB", JSON.stringify(userDB));
@@ -118,6 +129,7 @@ const AuthProvider = ({ children }) => {
         handleRegister,
         handlePhoneLogin,
         handleEmailLogin,
+        logout,
         isAuthenticated,
       }}
     >
