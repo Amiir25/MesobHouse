@@ -9,7 +9,7 @@ const Popup = ({ showPopup, type, message }) => {
 
   return (
     <div
-      className={`fixed w-full max-w-100 left-0 md:left-1/2 transform -translate-x-1/2 px-4 py-2 text-sm md:text-base tracking-wider transition-all duration-200 rounded z-40
+      className={`fixed w-full max-w-100 left-0 md:left-1/2 md:transform md:-translate-x-1/2 px-4 py-2 text-sm md:text-base tracking-wider transition-all duration-200 rounded z-40
         ${showPopup ? "opacity-100 top-0" : "opacity-0 -top-30"}
         ${popupStyle}`}
     >
