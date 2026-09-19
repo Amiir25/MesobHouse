@@ -4,44 +4,6 @@ import LoginLeftContent from "./LoginLeftContent";
 import LoginRightContent from "./LoginRightContent";
 
 const Login = () => {
-
-  // Form validation
-  const validForm = () => {
-    let error = "";
-    const phoneRegExp = /^(?:\+251|0)9\d{8}$/;
-    const emailRegExp = /^\S+@\S+\.\S+$/;
-    if (
-      !formData.phone.trim() &&
-      !formData.email.trim() &&
-      !formData.password.trim()
-    ) {
-      error = "Fill out the form to login!";
-    } else if (!formData.phone.trim() && !formData.email.trim()) {
-      error = "Enter your phone number or email address!";
-    } else if (!formData.password.trim()) {
-      error = "Enter your password!";
-    } else if (!formData.email.trim() && !phoneRegExp.test(formData.phone)) {
-      error = "Enter a valid phone number. Use 09…, 07…, +2519… or +2517…";
-    } else if (!formData.phone.trim() && !emailRegExp.test(formData.email)) {
-      error = "Enter a valid email address.";
-    } else if (formData.password.length < 8) {
-      error = "Password must be at least 8 characters.";
-    }
-
-    if (error) {
-      setErrorMsg(error);
-      setShowErrorMsg(true);
-      setTimeout(() => {
-        setShowErrorMsg(false);
-      }, 5000);
-
-      return false;
-    }
-
-    return true;
-  };
-
-
   return (
     <main className="bg-[#FFF1EB] px-2 py-4 md:px-8 lg:p-18">
       {/* Welcome Back */}
