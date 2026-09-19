@@ -1,6 +1,9 @@
 // Fetch all dishes
 export async function getDishes(signal) {
     try {
+        // Artifical delay
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        
         const res = await fetch("https://addis-eats-backend.onrender.com/menu/", { signal });
         if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
@@ -17,6 +20,9 @@ export async function getDishes(signal) {
 // Fetch special dishes
 export async function getSpecials(signal) {
     try {
+        // Artifical delay
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
         const res = await fetch("https://addis-eats-backend.onrender.com/menu/specials", { signal });
         if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
