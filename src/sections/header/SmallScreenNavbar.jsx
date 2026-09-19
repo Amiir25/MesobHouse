@@ -26,7 +26,7 @@ const SmallScreenNavbar = () => {
       <FaBars className="text-xl" onClick={() => setShowLinks(true)} />
       <div
         className={`bg-white fixed top-0 ${showLinks ? "right-0" : "-right-full"} transition-all duration-300 ease-in-out
-            w-screen h-screen flex flex-col items-center gap-4 pt-24`}
+            w-screen h-screen flex flex-col items-center gap-4 pt-24 z-30`}
       >
         {/* Close icon */}
         <FaCircleXmark
