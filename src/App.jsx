@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import Home from "./Home";
+import Home from "./home/Home";
 import Login from "./auth/Login/Login";
 import Register from "./auth/Register/Register";
 import Menu from "./menu/Menu";
