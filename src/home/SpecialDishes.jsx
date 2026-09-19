@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 
 const SpecialDishes = () => {
-  const { specials, loading, error } = useFetchSpecials();
-
-  if (loading) return <p>Loading Special Dishes...</p>;
+  let { specials, loading, error } = useFetchSpecials();
 
   return (
     <section id="specials" className="px-2 md:px-8 lg:px-18 mt-8">
@@ -24,6 +22,17 @@ const SpecialDishes = () => {
           40-spice blend, served piping hot on hand-stretched injera.
         </p>
       </div>
+
+      {loading && (
+        <div className="text-gray-500 mb-20">
+          <span>Loading Special Dishes</span>
+          <div className="space-y-2 mt-2">
+            <div className="h-6 w-full bg-gray-200 rounded animate-pulse"></div>
+            <div className="h-6 w-[80%] bg-gray-200 rounded animate-pulse"></div>
+            <div className="h-6 w-[90%] bg-gray-200 rounded animate-pulse"></div>
+          </div>
+        </div>
+      )}
       {error ? (
         <p className="border-t-4 border--4 border-red-500 text-red-500 text-center gap-2 mx-4 rounded-2xl p-2">
           Unable to load special dishes at the moment! Try again later.
@@ -33,7 +42,10 @@ const SpecialDishes = () => {
           {specials.slice(0, 3).map((dish) => {
             const { slug, nameEn, priceETB, description } = dish;
             return (
-              <div key={slug} className="border border-light-yellow py-2 px-4 lg:p-8 rounded-xl">
+              <div
+                key={slug}
+                className="border border-light-yellow py-2 px-4 lg:p-8 rounded-xl"
+              >
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-semibold">{nameEn}</h2>
                   <p className="text-dark-red font-bold">ETB {priceETB}</p>
