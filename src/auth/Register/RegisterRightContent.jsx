@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const RegisterRightContent = () => {
   return (
-    <div className="bg-white py-20 px-2 lg:px-8 rounded-lg max-w-[500px] mx-auto">
+    <div className="bg-white py-20 px-2 lg:px-8 rounded-lg max-w-125 mx-auto">
       {/* Title */}
       <section>
         <h2 className="text-2xl lg:text-5xl">
