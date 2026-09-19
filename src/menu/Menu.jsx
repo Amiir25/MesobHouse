@@ -50,7 +50,6 @@ const Menu = () => {
     );
   }, [dishes, debouncedSearchTerm, selectedCat]);
 
-  if (error) return <p>{error}</p>;
 
   return (
     <main className="my-12 px-2 md:px-8 lg:px-18">
