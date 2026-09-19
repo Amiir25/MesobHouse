@@ -18,9 +18,9 @@ import PopupProvider from "./ui/PopupContext";
 const App = () => {
   return (
     <>
-      <AuthProvider>
-        <CartProvider>
-          <PopupProvider>
+      <PopupProvider>
+        <AuthProvider>
+          <CartProvider>
             <Routes>
               <Route path="/" element={<RootLayout />}>
                 {/* Public Routes */}
@@ -64,9 +64,9 @@ const App = () => {
                 />
               </Route>
             </Routes>
-          </PopupProvider>
-        </CartProvider>
-      </AuthProvider>
+          </CartProvider>
+        </AuthProvider>
+      </PopupProvider>
     </>
   );
 };
