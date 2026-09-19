@@ -24,7 +24,7 @@ const RegisterationForm = () => {
   const [selectedPreference, setSelectedPreference] = useState(1);
 
   const [showSpinner, setShowSpinner] = useState(false);
-  const { handleRegister, isAuthenticated } = useAuth();
+  const { handleRegister } = useAuth();
   const { handlePopup } = usePopup();
 
   const navigate = useNavigate();
@@ -42,8 +42,8 @@ const RegisterationForm = () => {
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    handleRegister(data);
-    if (isAuthenticated) return;
+    const success = handleRegister(data);
+    if (!success) return;
 
     setShowSpinner(true);
 
