@@ -18,7 +18,8 @@ import CartInfo from "./CartInfo";
 
 const Menu = () => {
   // ---
-  const { dishes, loading, error } = useFetchDishes();
+  const { dishes, error } = useFetchDishes();
+  const loading = true;
 
   // ---
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,13 +51,12 @@ const Menu = () => {
     );
   }, [dishes, debouncedSearchTerm, selectedCat]);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
-    <main className="my-12">
+    <main className="my-12 px-2 md:px-8 lg:px-18">
       {/* Titles */}
-      <section className="max-w-200 px-2 md:px-8 lg:px-18">
+      <section className="max-w-200">
         <p className="text-dark-red text-[10px] md:text-sm flex items-center gap-2">
           <FaFire />
           <span>HANDCRAFTED GONDAR & ADDIS SPICES</span>
@@ -78,13 +78,31 @@ const Menu = () => {
       <CategoryBar selectedCat={selectedCat} onChangeCat={setSelectedCat} />
 
       {/* Dishes */}
-      <section className="px-2 md:px-8 lg:px-18 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {dishes.length > 0 && visibleDishes.length === 0 ? (
-          <p>No dish found</p>
+
+      <section className="mt-18">
+        {loading ? (
+          <div className="text-gray-500 mb-20">
+            <span>Loading Dishes</span>
+            <div className="space-y-2 mt-2">
+              <div className="h-6 w-full bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-6 w-[80%] bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-6 w-[90%] bg-gray-200 rounded animate-pulse"></div>
+            </div>
+          </div>
+        ) : error ? (
+          <p className="border-t-4 border--4 border-red-500 text-red-500 text-center gap-2 mx-4 rounded-2xl p-2">
+            Unable to load special dishes at the moment! Try again later.
+          </p>
         ) : (
-          visibleDishes.map((dish) => (
-            <DishCard key={dish.id} dish={dish} />
-          ))
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {dishes.length > 0 && visibleDishes.length === 0 ? (
+              <p>No dish found</p>
+            ) : (
+              visibleDishes.map((dish) => (
+                <DishCard key={dish.id} dish={dish} />
+              ))
+            )}
+          </div>
         )}
       </section>
 
@@ -110,7 +128,7 @@ const Menu = () => {
       </section>
 
       {/* Cart info */}
-      <CartInfo/>
+      <CartInfo />
     </main>
   );
 };

@@ -13,7 +13,7 @@ const categories = [
 
 const CategoryBar = ({ selectedCat, onChangeCat }) => {
   return (
-    <section className="px-2 md:px-8 lg:px-18 mt-8 flex flex-wrap gap-2 items-center lg:justify-center">
+    <section className="mt-8 flex flex-wrap gap-2 items-center lg:justify-center">
       {categories.map((cat) => {
         const { id, text } = cat;
         return (

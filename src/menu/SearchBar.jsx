@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = ({ searchTerm, onSearch }) => {
   return (
-    <section className="px-2 md:px-8 lg:px-18 mt-8 flex flex-col md:flex-row md:items-center gap-y-1 gap-x-4">
+    <section className="mt-8 flex flex-col md:flex-row md:items-center gap-y-1 gap-x-4">
       <label htmlFor="search" className="text-dark-yellow">
         Search Dishes
       </label>
