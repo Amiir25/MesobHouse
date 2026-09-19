@@ -8,7 +8,7 @@ const validPhone = /^(?:\+251|0)9\d{8}$/;
 const phoneSchema = z
     .string()
     .min(1, "Phone is requried!")
-    .regex(validPhone, "Invalid phone! Use 09.. or +2519...");
+    .regex(validPhone, "Invalid phone! Use 09.. or +2519... followed by 8 digits");
 
 // Email schema
 const emailSchema = z
