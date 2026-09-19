@@ -32,7 +32,7 @@ const RightCheckoutContent = () => {
     setTimeout(() => {
         setShowSpinner(false);
         onAddToCart("clear");
-        navigate("/");
+        navigate("/menu");
     }, 500);
   };
 
