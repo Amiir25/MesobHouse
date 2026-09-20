@@ -23,7 +23,7 @@ const DishCard = ({ dish, onDishClick }) => {
       <img
         src={`${imagePath}/image-main.png`}
         alt={nameEn}
-        className="rounded-xl lg:hover:scale-110 transition-scale duration-200"
+        className="rounded-xl lg:hover:scale-105 transition-scale duration-500"
       />
       <div className="py-2 px-2 lg:p-4">
         <div className="flex items-center justify-between">
