@@ -1,5 +1,10 @@
-import React from "react";
-import { FaArrowDown, FaBarsStaggered, FaCircleDot, FaMugSaucer } from "react-icons/fa6";
+import React, { useEffect, useState } from "react";
+import {
+  FaArrowDown,
+  FaBarsStaggered,
+  FaCircleDot,
+  FaMugSaucer,
+} from "react-icons/fa6";
 import Button from "../ui/Button";
 
 // Hero buttons
@@ -49,9 +54,23 @@ const heroData = [
   },
 ];
 
+// Images
+const images = [1, 2, 3, 4, 5, 6];
+
 const HomeHero = () => {
+  const images = [1, 2, 3, 4, 5, 6];
+  const [current, setCurrent] = useState(0);
+
+  // Image carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="px-2 md:px-8 lg:px-18 mt-8 md:grid grid-cols-2">
+    <section className="mt-8 md:grid grid-cols-2 lg:gap-x-20">
       {/* Hero Left */}
       <div>
         <p className="bg-light-red text-dark-red text-[10px] md:text-sm px-2 py-1 rounded-xl w-fit flex items-center gap-2">
@@ -94,8 +113,27 @@ const HomeHero = () => {
       </div>
 
       {/* Hero Right */}
-      <div className="flex items-center justify-center">
-        <img src="/src/assets/home-page-hero.png" alt="" />
+      {/* <div className="overflow-hidden rounded mt-8 md:mt-0 lg:h-[70vh]">
+        <div className="flex animate-slide-left">
+          {[...images, ...images].map((n, i) => (
+            <img
+              key={i}
+              src={`/src/assets/images/home-page-images/image-${n}.png`}
+              alt=""
+              className="w-full shrink-0"
+            />
+          ))}
+        </div>
+      </div> */}
+      <div className="grid rounded-xl overflow-hidden mt-8 md:mt-0">
+        {images.map((n, i) => (
+          <img
+            src={`/src/assets/images/home-page-images/image-${n}.png`}
+            alt=""
+            className={`col-start-1 row-start-1 w-full h-full transition-opacity duration-2000 ease-in-out
+            ${ i === current ? "opacity-100" : "opacity-0" }`}
+          />
+        ))}
       </div>
     </section>
   );
