@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../cart/CartContext";
 import CategoryBar from "./CategoryBar";
 import SearchBar from "./SearchBar";
-import DishCard from "./DishCard";
+import DishCard from "./dish/DishCard";
 import CartInfo from "./CartInfo";
 
 const Menu = () => {
@@ -49,7 +49,6 @@ const Menu = () => {
         dish.category.toLowerCase().includes(term),
     );
   }, [dishes, debouncedSearchTerm, selectedCat]);
-
 
   return (
     <main className="my-12 px-2 md:px-8 lg:px-18">
