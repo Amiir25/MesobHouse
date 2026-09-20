@@ -7,7 +7,7 @@ const CheckoutCartItems = () => {
   return (
     <section className="mt-4 flex flex-col gap-8">
       {cart.map((item) => {
-        const { id, nameEn, description, priceETB, qty } = item;
+        const { id, nameEn, description, priceETB, qty, imagePath } = item;
         return (
           <div
             key={id}
@@ -17,9 +17,9 @@ const CheckoutCartItems = () => {
             <section className="flex flex-col lg:flex-row gap-4">
               <div className="h-30 lg:h-auto w-full lg:w-40">
                 <img
-                  src="/src/assets/dish-images/doro-wet.jpg"
+                  src={`${imagePath}/image-main.png`}
                   alt=""
-                  className="w-full h-full object-cover lg:object-contain"
+                  className="w-full h-full object-cover lg:object-cover"
                 />
               </div>
               <div className="flex flex-col">
