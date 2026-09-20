@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const SearchBar = ({ searchTerm, onSearch }) => {
+  const searchRef = useRef();
+
+  useEffect(() => {
+    searchRef.current.focus();
+  }, [])
+
   return (
     <section className="mt-8 flex flex-col md:flex-row md:items-center gap-y-1 gap-x-4">
       <label htmlFor="search" className="text-dark-yellow">
@@ -8,6 +14,7 @@ const SearchBar = ({ searchTerm, onSearch }) => {
       </label>
       <input
         type="search"
+        ref={searchRef}
         id="search"
         name="search"
         value={searchTerm}
