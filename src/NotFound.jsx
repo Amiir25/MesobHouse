@@ -99,26 +99,37 @@ const NotFound = ({ type }) => {
       ) : (
         <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-4">
           {specials.slice(0, 3).map((dish) => {
-            const { slug, nameEn, priceETB, description } = dish;
+            const { slug, nameEn, priceETB, description, imagePath } = dish;
             return (
-              <div className="border border-light-yellow py-2 px-4 lg:p-8 rounded-xl">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-semibold">{nameEn}</h2>
-                  <p className="text-dark-red font-bold">ETB {priceETB}</p>
-                </div>
-                <p className="text-sm mt-2">{description}</p>
-                <div className="flex items-center justify-between mt-4">
-                  <Link to={`/menu/${slug}`} className="text-dark-yellow">
-                    View Details
-                  </Link>
-                  <div>
-                    <Button
+              <div
+                key={slug}
+                className="border border-light-yellow rounded-xl overflow-hidden"
+                onClick={() => navigate(`/menu/${slug}`)}
+              >
+                <img
+                  src={`${imagePath}/image-main.png`}
+                  alt={nameEn}
+                  className="rounded-xl lg:hover:scale-105 transition-scale duration-500"
+                />
+                <div className="py-2 px-2 lg:p-4">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-semibold">{nameEn}</h2>
+                    <p className="text-dark-red font-bold">ETB {priceETB}</p>
+                  </div>
+                  <p className="text-sm mt-2">{description}</p>
+                  <div className="flex items-center justify-between mt-4">
+                    <Link to={`/menu/${slug}`} className="text-dark-yellow">
+                      View Details
+                    </Link>
+                    <div>
+                      <Button
                       color={"light-red"}
                       onClick={() => navigate("/menu")}
                     >
                       Order Now
                       <FaPlus />
                     </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,7 +157,7 @@ const NotFound = ({ type }) => {
             +251911234567
           </button>
           <Button color="brand">
-            <SlCalender/>
+            <SlCalender />
             Reserve
           </Button>
         </div>
