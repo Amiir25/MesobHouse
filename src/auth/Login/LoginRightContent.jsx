@@ -22,7 +22,7 @@ const LoginRightContent = () => {
       <div className="mt-8 flex flex-col lg:flex-row justify-center lg:justify-start gap-2">
         <Button color="light-red">
           <img
-            src="telebirr-logo.jpg"
+            src="/src/assets/telebirr-logo.jpg"
             alt=""
             className="w-8 h-8 rounded-full"
           />
@@ -36,7 +36,7 @@ const LoginRightContent = () => {
         </Button>
 
         <Button color="light-red">
-          <img src="google-logo.webp" alt="" className="w-8 h-8 rounded-full" />
+          <img src="/src/assets/google-logo.webp" alt="" className="w-8 h-8 rounded-full" />
           <span className="flex flex-col items-start">
             <span className="block text-lg">Google Sign-In</span>
             <small className="text-xs font-extralight">

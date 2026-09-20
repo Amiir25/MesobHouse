@@ -76,7 +76,7 @@ const LoginForm = ({ activeBtn }) => {
             </label>
             <div className="bg-light-red py-1 flex items-center gap-2 mt-1 rounded focus-within:ring-2 px-2">
               <div className="flex items-center gap-1">
-                <img src="eth-flag.webp" alt="" className="w-6" />
+                <img src="/src/assets/eth-flag.webp" alt="" className="w-6" />
                 <span>+251</span>
               </div>
               <input

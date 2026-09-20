@@ -57,7 +57,7 @@ const LoginLeftContent = () => {
       {/* Image */}
       <div className="relative">
         <img
-          src="login-background.png"
+          src="/src/assets/login-background.png"
           alt=""
           className="w-full h-full object-cover"
         />

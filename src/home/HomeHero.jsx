@@ -95,7 +95,7 @@ const HomeHero = () => {
 
       {/* Hero Right */}
       <div className="flex items-center justify-center">
-        <img src="home-page-hero.png" alt="" />
+        <img src="/src/assets/home-page-hero.png" alt="" />
       </div>
     </section>
   );
