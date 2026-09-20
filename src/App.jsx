@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Home from "./home/Home";
 import Login from "./auth/Login/Login";
 import Register from "./auth/Register/Register";
-import Menu from "./menu/Menu";
+const Menu = lazy(() => import("./menu/Menu"));
 import DishDetail from "./menu/dish/DishDetail";
-import Cart from "./cart/Cart";
+const Cart = lazy(() => import("./cart/Cart"));
 import Checkout from "./checkout/Checkout";
 import NotFound from "./NotFound";
 
@@ -14,10 +14,11 @@ import RequireAuth from "./auth/RequireAuth";
 import AuthProvider from "./auth/AuthContext";
 import CartProvider from "./cart/CartContext";
 import PopupProvider from "./ui/PopupContext";
+import Spinner from "./ui/Spinner";
 
 const App = () => {
   return (
-    <>
+    <Suspense fallback={<Spinner/>}>
       <PopupProvider>
         <AuthProvider>
           <CartProvider>
@@ -67,7 +68,7 @@ const App = () => {
           </CartProvider>
         </AuthProvider>
       </PopupProvider>
-    </>
+    </Suspense>
   );
 };
 
