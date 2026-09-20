@@ -1,10 +1,11 @@
 import React from "react";
 import useFetchSpecials from "../hooks/useFetchSpecials";
 import { FaCartPlus, FaUtensils } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
 const SpecialDishes = () => {
+  const navigate = useNavigate();
   let { specials, loading, error } = useFetchSpecials();
 
   return (
@@ -40,26 +41,34 @@ const SpecialDishes = () => {
       ) : (
         <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-4">
           {specials.slice(0, 3).map((dish) => {
-            const { slug, nameEn, priceETB, description } = dish;
+            const { slug, nameEn, priceETB, description, imagePath } = dish;
             return (
               <div
                 key={slug}
-                className="border border-light-yellow py-2 px-4 lg:p-8 rounded-xl"
+                className="border border-light-yellow rounded-xl overflow-hidden"
+                onClick={() => navigate(`/menu/${slug}`)}
               >
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-semibold">{nameEn}</h2>
-                  <p className="text-dark-red font-bold">ETB {priceETB}</p>
-                </div>
-                <p className="text-sm mt-2">{description}</p>
-                <div className="flex items-center justify-between mt-4">
-                  <Link to={`/menu/${slug}`} className="text-dark-yellow">
-                    View Details
-                  </Link>
-                  <div>
-                    <Button color={"brand"} onClick={() => navigate("/cart")}>
-                      <FaCartPlus />
-                      Quick Add
-                    </Button>
+                <img
+                  src={`${imagePath}/image-main.png`}
+                  alt={nameEn}
+                  className="rounded-xl lg:hover:scale-110 transition-scale duration-200"
+                />
+                <div className="py-2 px-2 lg:p-4">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-semibold">{nameEn}</h2>
+                    <p className="text-dark-red font-bold">ETB {priceETB}</p>
+                  </div>
+                  <p className="text-sm mt-2">{description}</p>
+                  <div className="flex items-center justify-between mt-4">
+                    <Link to={`/menu/${slug}`} className="text-dark-yellow">
+                      View Details
+                    </Link>
+                    <div>
+                      <Button color={"brand"} onClick={() => navigate("/cart")}>
+                        <FaCartPlus />
+                        Quick Add
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
