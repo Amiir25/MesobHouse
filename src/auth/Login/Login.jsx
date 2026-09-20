@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaDotCircle } from "react-icons/fa";
 import LoginLeftContent from "./LoginLeftContent";
 import LoginRightContent from "./LoginRightContent";
+import { useLocation } from "react-router-dom";
+import { usePopup } from "../../ui/PopupContext";
 
 const Login = () => {
+  const location = useLocation();
+  const { handlePopup } = usePopup();
+
+  // Show popup on redirection
+  useEffect(() => {
+    if (location.state?.message) {
+      handlePopup("error", location.state.message)
+    }
+  }, []);
+
   return (
     <main className="bg-[#FFF1EB] px-2 py-4 md:px-8 lg:p-18">
       {/* Welcome Back */}
