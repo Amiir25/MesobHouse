@@ -26,7 +26,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="">
+    <main className="px-2 md:px-8 lg:px-18 mt-8">
       {/* Top text */}
       <section className="mx-2 flex items-center justify-center lg:justify-between gap-4 text-xs lg:text-sm mt-4 bg-light-red p-2 rounded-2xl">
         <div className="flex flex-col lg:flex-row lg:items-center gap-x-4">

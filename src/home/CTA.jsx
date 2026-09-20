@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 const CTA = () => {
   return (
-    <section className="px-2 py-4 md:p-8 lg:p-12 mt-18 mx-2 lg:m-18 bg-brand text-light-red rounded-xl flex flex-col md:flex-row md:items-center gap-4 md:gap-8 lg:gap-18">
+    <section className="px-2 py-4 md:p-8 lg:p-12 mt-18 bg-brand text-light-red rounded-xl flex flex-col md:flex-row md:items-center gap-4 md:gap-8 lg:gap-18">
       <div className="md:max-w-[70%] lg:max-w-180">
         <p className="text-light-yellow text-[10px] md:text-sm">
           JOIN OUR TABLE

@@ -32,7 +32,7 @@ const gurshaData = [
 
 const GurshaSpirit = () => {
   return (
-    <section className="px-2 py-4 md:p-8 lg:px-18 mt-18 bg-light-red lg:flex items-center">
+    <section className="px-2 py-4 md:p-8 mt-18 bg-light-red lg:flex items-center rounded-xl">
       <div>
         <p className="text-dark-red text-[10px] md:text-sm flex items-center gap-2">
           <FaYelp />

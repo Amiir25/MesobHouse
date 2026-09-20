@@ -31,7 +31,7 @@ const reflections = [
 
 const Reflections = () => {
   return (
-    <section className="px-2 py-4 md:px-8 lg:px-18 mt-18">
+    <section className="mt-18">
       <p className="text-dark-red text-[10px] md:text-sm text-center">
         VOICES AROUND MESOB
       </p>

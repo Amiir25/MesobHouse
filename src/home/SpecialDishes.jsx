@@ -9,7 +9,7 @@ const SpecialDishes = () => {
   let { specials, loading, error } = useFetchSpecials();
 
   return (
-    <section id="specials" className="px-2 md:px-8 lg:px-18 mt-8">
+    <section id="specials" className="mt-24">
       <div className="lg:max-w-200">
         <p className="text-dark-red text-[10px] md:text-sm flex items-center gap-2">
           <FaUtensils />
