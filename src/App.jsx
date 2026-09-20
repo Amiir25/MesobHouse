@@ -5,7 +5,7 @@ import Home from "./home/Home";
 import Login from "./auth/Login/Login";
 import Register from "./auth/Register/Register";
 import Menu from "./menu/Menu";
-import DishDetail from "./menu/DishDetail";
+import DishDetail from "./menu/dish/DishDetail";
 import Cart from "./cart/Cart";
 import Checkout from "./checkout/Checkout";
 import NotFound from "./NotFound";
