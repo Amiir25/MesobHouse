@@ -16,12 +16,13 @@ const RightCheckoutContent = () => {
   //
   const [showSpinner, setShowSpinner] = useState(false);
   const [showCheckoutMsg, setShowCheckoutMsg] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   //   Handle Checkout
   const handleCheckout = () => {
-    setShowSpinner(true);
+    setIsSubmitting(true);
     setTimeout(() => {
-        setShowSpinner(false)
+        setIsSubmitting(false)
         setShowCheckoutMsg(true);
     }, 3000);
   }
@@ -33,7 +34,7 @@ const RightCheckoutContent = () => {
         setShowSpinner(false);
         onAddToCart("clear");
         navigate("/menu");
-    }, 500);
+    }, 1000);
   };
 
   // Loading Spinner
@@ -97,8 +98,17 @@ const RightCheckoutContent = () => {
 
       {/* Confirm button */}
       <section className="mt-8" onClick={handleCheckout}>
-        <Button color="brand">
-          Confirm Order . <span className="font-semibold">ETB {total}</span>
+        <Button color="brand" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <div className="flex items-center gap-4">
+                <span>Submitting...</span>
+                <div className="w-4 h-4 border border-white rounded-full border-t-transparent animate-spin"></div>
+              </div>
+          ) : (
+            <p>
+              Confirm Order . <span className="font-semibold">ETB {total}</span>
+            </p>
+          )}
         </Button>
       </section>
 
