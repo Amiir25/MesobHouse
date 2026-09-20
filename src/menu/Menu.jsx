@@ -91,7 +91,7 @@ const Menu = () => {
             Unable to load special dishes at the moment! Try again later.
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {dishes.length > 0 && visibleDishes.length === 0 ? (
               <p>No dish found</p>
             ) : (
