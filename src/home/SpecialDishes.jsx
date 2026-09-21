@@ -1,6 +1,6 @@
 import React from "react";
 import useFetchSpecials from "../hooks/useFetchSpecials";
-import { FaCartPlus, FaUtensils } from "react-icons/fa6";
+import { FaUtensils } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
