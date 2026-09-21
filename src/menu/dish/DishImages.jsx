@@ -6,7 +6,7 @@ const DishImages = ({ selectedDish }) => {
   const { slug } = useParams();
 
   return (
-    <section className="mb-8 w-86 lg:w-full">
+    <section className="mb-8 w-86 lg:w-full mx-auto">
       {/* Big image */}
       <img
         src={`${selectedDish?.imagePath}/image-main.png`}
