@@ -24,7 +24,7 @@ const LoginForm = ({ activeBtn }) => {
   // Routing states
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || "/menu";
+  const from = location.state?.from || "/menu";
 
   // Conditional login schema
   const schema = activeBtn === "phone" ? phoneLoginSchema : emailLoginSchema;
