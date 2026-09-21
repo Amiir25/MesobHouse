@@ -24,6 +24,7 @@ const Cart = () => {
     setTimeout(() => {
       onAddToCart("clear");
       setShowSpinner(false);
+      navigate("/menu");
     }, 2000);
   };
 
