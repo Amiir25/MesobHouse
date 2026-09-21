@@ -18,7 +18,7 @@ import Spinner from "./ui/Spinner";
 
 const App = () => {
   return (
-    <Suspense fallback={<Spinner/>}>
+    <Suspense fallback={<Spinner />}>
       <PopupProvider>
         <AuthProvider>
           <CartProvider>
@@ -28,17 +28,10 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/menu" element={<Menu />} />
                 <Route path="*" element={<NotFound type="page" />} />
 
                 {/* Protected Routes */}
-                <Route
-                  path="/menu"
-                  element={
-                    <RequireAuth>
-                      <Menu />
-                    </RequireAuth>
-                  }
-                />
                 <Route
                   path="/menu/:slug"
                   element={
