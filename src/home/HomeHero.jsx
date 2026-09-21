@@ -128,6 +128,7 @@ const HomeHero = () => {
       <div className="grid rounded-xl overflow-hidden mt-8 md:mt-0">
         {images.map((n, i) => (
           <img
+            key={n}
             src={`/src/assets/images/home-page-images/image-${n}.png`}
             alt=""
             className={`col-start-1 row-start-1 w-full h-full transition-opacity duration-2000 ease-in-out
