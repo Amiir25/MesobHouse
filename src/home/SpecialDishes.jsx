@@ -59,16 +59,13 @@ const SpecialDishes = () => {
                     <p className="text-dark-red font-bold">ETB {priceETB}</p>
                   </div>
                   <p className="text-sm mt-2">{description}</p>
-                  <div className="flex items-center justify-between mt-4">
-                    <Link to={`/menu/${slug}`} className="text-dark-yellow">
+                  <div className="mt-4">
+                    <Link
+                      to={`/menu/${slug}`}
+                      className="text-dark-red underline"
+                    >
                       View Details
                     </Link>
-                    <div>
-                      <Button color={"brand"} onClick={() => navigate("/cart")}>
-                        <FaCartPlus />
-                        Quick Add
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </div>
