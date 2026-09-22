@@ -1,11 +1,11 @@
 import React from "react";
 import { useCart } from "../cart/CartContext";
 import Button from "../ui/Button";
-import { FaArrowRight, FaBagShopping } from "react-icons/fa6";
+import { FaArrowRight, FaBagShopping, FaCircleXmark } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 const CartInfo = () => {
-    const { cart, total } = useCart();
+    const { cart, total, onAddToCart } = useCart();
     const navigate = useNavigate();
   return (
     <>
@@ -23,7 +23,8 @@ const CartInfo = () => {
               <p className="text-light-yellow">ETB {total}</p>
             </div>
           </div>
-          <div>
+          <div className="flex flex-col items-end gap-2">
+            <FaCircleXmark className="text-xl text-white" onClick={() => onAddToCart("clear")}/>
             <Button color="brand" onClick={() => navigate("/cart")}>
               Proceed to Cart
               <FaArrowRight />
