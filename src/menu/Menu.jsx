@@ -1,20 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import useFetchDishes from "../hooks/useFetchDishes";
 import useDebounce from "../hooks/useDebounce";
-import {
-  FaArrowRight,
-  FaBagShopping,
-  FaCartPlus,
-  FaFire,
-  FaUtensils,
-} from "react-icons/fa6";
+import { FaFire, FaUtensils } from "react-icons/fa6";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../cart/CartContext";
 import CategoryBar from "./CategoryBar";
 import SearchBar from "./SearchBar";
 import DishCard from "./dish/DishCard";
-import CartInfo from "./CartInfo";
 
 const Menu = () => {
   // ---
@@ -123,9 +115,6 @@ const Menu = () => {
           </div>
         </div>
       </section>
-
-      {/* Cart info */}
-      <CartInfo />
     </main>
   );
 };
