@@ -1,8 +1,4 @@
 import React from "react";
-import { useCart } from "../../cart/CartContext";
-import { GiShoppingCart } from "react-icons/gi";
-import { GrCart } from "react-icons/gr";
-import { useNavigate } from "react-router-dom";
 import SmallScreenNavbar from "./SmallScreenNavbar";
 import LargeScreenNavbar from "./LargeScreenNavbar";
 import HeaderCartInfo from "./HeaderCartInfo";
