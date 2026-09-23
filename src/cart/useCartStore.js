@@ -58,7 +58,7 @@ const useCartStore = create(
 
             // Prices
             subtotal: () => (
-                get().cart.reduce((sum, dish) => sum + dish.price * dish.qty, 0)
+                get().cart.reduce((sum, dish) => sum + dish.priceETB * dish.qty, 0)
             ),
             vat: () => (get().subtotal() * 0.15),
             total: () => (get().subtotal() + get().vat()),
