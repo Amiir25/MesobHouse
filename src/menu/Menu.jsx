@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import CategoryBar from "./CategoryBar";
 import SearchBar from "./SearchBar";
 import DishCard from "./dish/DishCard";
+import CartInfo from "./CartInfo";
 
 const Menu = () => {
   // ---
@@ -115,6 +116,9 @@ const Menu = () => {
           </div>
         </div>
       </section>
+
+      {/* Bottom Cart Info */}
+      <CartInfo />
     </main>
   );
 };
