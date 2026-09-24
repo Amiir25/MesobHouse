@@ -18,6 +18,7 @@ import Button from "../../ui/Button";
 import NotFound from "../../NotFound";
 import DishDetailLeftContent from "./DishDetailLeftContent";
 import DishDetailRightContent from "./DishDetailRightContent";
+import CartInfo from "../CartInfo";
 
 const DishDetail = () => {
   const { slug } = useParams();
@@ -77,6 +78,9 @@ const DishDetail = () => {
           <Button color="white">Explore Full Feast Menu</Button>
         </div>
       </section>
+
+      {/* Bottom Cart Info */}
+      <CartInfo />
     </main>
   );
 };
