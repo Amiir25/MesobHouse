@@ -15,7 +15,6 @@ import AuthProvider from "./auth/AuthContext";
 import CartProvider from "./cart/CartContext";
 import PopupProvider from "./ui/PopupContext";
 import Spinner from "./ui/Spinner";
-import CartInfo from "./menu/CartInfo";
 
 const App = () => {
   return (
@@ -59,10 +58,6 @@ const App = () => {
                 />
               </Route>
             </Routes>
-            
-            {/* Bottom Cart Info */}
-            <CartInfo />
-
           </CartProvider>
         </AuthProvider>
       </PopupProvider>
