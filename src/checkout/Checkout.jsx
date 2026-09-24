@@ -1,5 +1,3 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import EmptyCartState from "../cart/EmptyCartState";
 import LeftCheckoutContent from "./LeftCheckoutContent";
 import RightCheckoutContent from "./RightCheckoutContent";
@@ -7,7 +5,6 @@ import useCartStore from "../cart/useCartStore";
 
 const Checkout = () => {
   const cart = useCartStore(state => state.cart);
-  const navigate = useNavigate();
 
   // Empty cart state
   if (cart.length === 0) {

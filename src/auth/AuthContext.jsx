@@ -1,4 +1,4 @@
-import React, { Children, createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { usePopup } from "../ui/PopupContext";
 
 const AuthContext = createContext();

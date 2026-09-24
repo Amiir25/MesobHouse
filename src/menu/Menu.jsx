@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import useFetchDishes from "../hooks/useFetchDishes";
 import useDebounce from "../hooks/useDebounce";
 import { FaFire, FaUtensils } from "react-icons/fa6";

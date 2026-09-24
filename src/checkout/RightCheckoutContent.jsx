@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CheckoutCartItems from "./CheckoutCartItems";
 import { useNavigate } from "react-router-dom";
 import { BiCheckShield } from "react-icons/bi";

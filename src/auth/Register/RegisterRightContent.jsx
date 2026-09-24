@@ -1,4 +1,3 @@
-import React from "react";
 import RegisterationForm from "./RegisterationForm";
 import Button from "../../ui/Button";
 import { FaArrowRight } from "react-icons/fa";

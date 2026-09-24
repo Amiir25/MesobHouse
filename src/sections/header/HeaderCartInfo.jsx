@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { GrCart } from "react-icons/gr";
 import useCartStore from "../../cart/useCartStore";
@@ -7,8 +6,6 @@ const HeaderCartInfo = () => {
   const cart = useCartStore(state => state.cart);
   const total = useCartStore(state => state.total());
   const navigate = useNavigate();
-
-  // if (!cart) return null;
 
   return (
     <>

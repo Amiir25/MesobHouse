@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../../ui/Button";
 import { FaCartPlus } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";

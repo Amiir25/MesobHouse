@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { LuBadgeCheck } from "react-icons/lu";
-import Button from "../ui/Button";
 import LeftCartContent from "./LeftCartContent";
 import RightCartContent from "./RightCartContent";
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from "react";
 import PriceLists from "./PriceLists";
 import Button from "../ui/Button";
 import { FaArrowRight, FaMoneyBill } from "react-icons/fa6";

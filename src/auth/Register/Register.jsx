@@ -1,6 +1,5 @@
 import React from "react";
 import { FaDotCircle } from "react-icons/fa";
-import { useLocation, useNavigate } from "react-router-dom";
 import RegisterLeftContent from "./RegisterLeftContent";
 import RegisterRightContent from "./RegisterRightContent";
 

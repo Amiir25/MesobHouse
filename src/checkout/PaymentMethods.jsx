@@ -1,4 +1,3 @@
-import React from "react";
 import { BiCloudDownload } from "react-icons/bi";
 import { CiBank, CiCreditCard1 } from "react-icons/ci";
 import { LuCreditCard } from "react-icons/lu";

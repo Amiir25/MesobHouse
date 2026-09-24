@@ -29,7 +29,7 @@ const Login = () => {
         </p>
       </section>
 
-      {/* ================== */}
+      {/* Grid area */}
       <section className="grid md:grid-cols-2 gap-8">
         {/* Left Content */}
         <div className="hidden md:block">

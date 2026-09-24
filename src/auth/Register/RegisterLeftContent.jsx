@@ -1,4 +1,3 @@
-import React from "react";
 import { FaAward, FaBell, FaBicycle, FaChair, FaStar, FaWineGlass } from "react-icons/fa6";
 
 const lists = [

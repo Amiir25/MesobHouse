@@ -1,4 +1,3 @@
-import React from "react";
 import useCartStore from "../cart/useCartStore";
 
 const CheckoutCartItems = () => {

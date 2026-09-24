@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button";
-import { RiEBike2Line, RiHandHeartLine, RiSendPlaneLine } from "react-icons/ri";
+import { RiEBike2Line, RiHandHeartLine } from "react-icons/ri";
 import { FiPackage } from "react-icons/fi";
-import { LuSquareUser } from "react-icons/lu";
-import { MdMyLocation } from "react-icons/md";
-import { BiCloudDownload } from "react-icons/bi";
 import PaymentMethods from "./PaymentMethods";
 import CheckoutForm from "./CheckoutForm";
 

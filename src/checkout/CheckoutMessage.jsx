@@ -1,4 +1,3 @@
-import React from "react";
 import { MdCelebration } from "react-icons/md";
 import Button from "../ui/Button";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { BsForkKnife } from "react-icons/bs";
 import { CiShare2 } from "react-icons/ci";
 import { RiCupFill } from "react-icons/ri";

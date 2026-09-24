@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";

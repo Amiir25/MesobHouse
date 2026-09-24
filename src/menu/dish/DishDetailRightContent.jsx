@@ -1,8 +1,14 @@
-import React, { useState } from "react";
-import useFetchDishes from "../../hooks/useFetchDishes";
-import NotFound from "../../NotFound";
-import { useNavigate, useParams } from "react-router-dom";
-import { FaBagShopping, FaCircle, FaCircleUp, FaFire, FaHeart, FaMinus, FaPercent, FaPlus, FaUsers } from "react-icons/fa6";
+import {
+  FaBagShopping,
+  FaCircle,
+  FaCircleUp,
+  FaFire,
+  FaHeart,
+  FaMinus,
+  FaPercent,
+  FaPlus,
+  FaUsers,
+} from "react-icons/fa6";
 import Button from "../../ui/Button";
 import DishImages from "./DishImages";
 import useCartStore from "../../cart/useCartStore";
@@ -53,13 +59,12 @@ const sideAccents = [
 ];
 
 const DishDetailRightContent = ({ selectedDish }) => {
+  const addDish = useCartStore((state) => state.addDish);
+  const increment = useCartStore((state) => state.increment);
+  const decrement = useCartStore((state) => state.decrement);
 
-  const addDish = useCartStore(state => state.addDish);
-  const increment = useCartStore(state => state.increment);
-  const decrement = useCartStore(state => state.decrement);
-
-  const cartItem = useCartStore(state =>
-    state.cart.find(item => item.id === selectedDish.id)
+  const cartItem = useCartStore((state) =>
+    state.cart.find((item) => item.id === selectedDish.id),
   );
 
   const inCart = Boolean(cartItem);
@@ -67,18 +72,18 @@ const DishDetailRightContent = ({ selectedDish }) => {
 
   const handleOrder = () => {
     addDish(selectedDish);
-  }
+  };
 
   const handlePlus = () => {
     if (inCart) increment(selectedDish.id);
     else handleOrder();
-  }
+  };
 
   return (
     <div>
       {/* Image */}
       <section className="md:hidden">
-        <DishImages selectedDish={selectedDish}/>
+        <DishImages selectedDish={selectedDish} />
       </section>
 
       {/*  */}
@@ -87,9 +92,13 @@ const DishDetailRightContent = ({ selectedDish }) => {
           <span className="text-xl md:text-2xl lg:text-4xl text-brand italic">
             {selectedDish?.nameEn}
           </span>
-          <small className="text-dark-yellow lg:text-xl">({selectedDish?.nameAm})</small>
+          <small className="text-dark-yellow lg:text-xl">
+            ({selectedDish?.nameAm})
+          </small>
         </h1>
-        <p className="text-sm lg:text-base tracking-wide my-2">{selectedDish?.description}</p>
+        <p className="text-sm lg:text-base tracking-wide my-2">
+          {selectedDish?.description}
+        </p>
       </section>
 
       {/*  */}
@@ -208,7 +217,7 @@ const DishDetailRightContent = ({ selectedDish }) => {
         <div>
           <Button color="brand" onClick={handleOrder} disabled={inCart}>
             <FaBagShopping />
-            <span>Add to Order . ETB { selectedDish.priceETB }</span>
+            <span>Add to Order . ETB {selectedDish.priceETB}</span>
           </Button>
         </div>
       </section>

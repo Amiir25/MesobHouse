@@ -1,4 +1,3 @@
-import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdDeleteForever } from "react-icons/md";
 import useCartStore from "./useCartStore";

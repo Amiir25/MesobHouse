@@ -1,9 +1,6 @@
-import React from "react";
-import useFetchDishes from "../../hooks/useFetchDishes";
 import { useParams } from "react-router-dom";
 
 const DishImages = ({ selectedDish }) => {
-  const { slug } = useParams();
 
   return (
     <section className="mb-8 w-86 lg:w-full mx-auto">

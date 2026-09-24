@@ -1,8 +1,6 @@
-import React from "react";
 import {
   FaBicycle,
   FaCookie,
-  FaMugSaucer,
   FaQrcode,
   FaStar,
 } from "react-icons/fa6";

@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
-import useFetchDishes from "../../hooks/useFetchDishes";
 import { FaCrown } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
 import DishImages from "./DishImages";
 
 const DishDetailLeftContent = ({ selectedDish }) => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
 
   return (
     <div className="hidden md:block">

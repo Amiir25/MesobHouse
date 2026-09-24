@@ -1,4 +1,3 @@
-import React from "react";
 import { BiCloudDownload } from "react-icons/bi";
 import { LuSquareUser } from "react-icons/lu";
 import { MdMyLocation } from "react-icons/md";

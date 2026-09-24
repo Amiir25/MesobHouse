@@ -1,4 +1,3 @@
-import React from "react";
 import SmallScreenNavbar from "./SmallScreenNavbar";
 import LargeScreenNavbar from "./LargeScreenNavbar";
 import HeaderCartInfo from "./HeaderCartInfo";

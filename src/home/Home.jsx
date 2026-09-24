@@ -1,21 +1,4 @@
-import React from "react";
-import useFetchSpecials from "../hooks/useFetchSpecials";
-import {
-  FaArrowDown,
-  FaBarsStaggered,
-  FaCartPlus,
-  FaCircleCheck,
-  FaCircleDot,
-  FaExclamation,
-  FaMugSaucer,
-  FaPlus,
-  FaStar,
-  FaUtensils,
-  FaYelp,
-} from "react-icons/fa6";
-import Button from "../ui/Button";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { FaCircleCheck } from "react-icons/fa6";
 import HomeHero from "./HomeHero";
 import SpecialDishes from "./SpecialDishes";
 import GurshaSpirit from "./GurshaSpirit";
@@ -23,7 +6,6 @@ import Reflections from "./Reflections";
 import CTA from "./CTA";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   return (
     <main className="px-2 md:px-8 lg:px-18 mt-8">
@@ -41,19 +23,19 @@ const Home = () => {
       </section>
 
       {/* Hero */}
-      <HomeHero/>
+      <HomeHero />
 
       {/* Specials */}
-      <SpecialDishes/>
+      <SpecialDishes />
 
       {/* Gursha Spirit */}
-      <GurshaSpirit/>
+      <GurshaSpirit />
 
       {/* Reflections section */}
-      <Reflections/>
+      <Reflections />
 
       {/* Call To Action */}
-      <CTA/>
+      <CTA />
     </main>
   );
 };

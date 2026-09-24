@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Home from "./home/Home";
@@ -12,7 +12,6 @@ import NotFound from "./NotFound";
 
 import RequireAuth from "./auth/RequireAuth";
 import AuthProvider from "./auth/AuthContext";
-import CartProvider from "./cart/CartContext";
 import PopupProvider from "./ui/PopupContext";
 import Spinner from "./ui/Spinner";
 

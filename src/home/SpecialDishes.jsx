@@ -1,8 +1,6 @@
-import React from "react";
 import useFetchSpecials from "../hooks/useFetchSpecials";
 import { FaUtensils } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../ui/Button";
 
 const SpecialDishes = () => {
   const navigate = useNavigate();

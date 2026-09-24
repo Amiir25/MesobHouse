@@ -1,4 +1,3 @@
-import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";

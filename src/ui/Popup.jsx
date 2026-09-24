@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const Popup = ({ showPopup, type, message }) => {
 
   const popupStyle =

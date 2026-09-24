@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../ui/Button";
 import { FaArrowRight, FaBagShopping, FaCircleXmark } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";

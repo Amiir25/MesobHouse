@@ -113,18 +113,6 @@ const HomeHero = () => {
       </div>
 
       {/* Hero Right */}
-      {/* <div className="overflow-hidden rounded mt-8 md:mt-0 lg:h-[70vh]">
-        <div className="flex animate-slide-left">
-          {[...images, ...images].map((n, i) => (
-            <img
-              key={i}
-              src={`/src/assets/images/home-page-images/image-${n}.png`}
-              alt=""
-              className="w-full shrink-0"
-            />
-          ))}
-        </div>
-      </div> */}
       <div className="grid rounded-xl overflow-hidden mt-8 md:mt-0">
         {images.map((n, i) => (
           <img

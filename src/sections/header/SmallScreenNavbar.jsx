@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaCircleXmark } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Button from "../../ui/Button";
@@ -19,7 +19,6 @@ const protectedLinks = [
 const SmallScreenNavbar = () => {
   const { isAuthenticated } = useAuth();
   const [showLinks, setShowLinks] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <nav className="md:hidden">

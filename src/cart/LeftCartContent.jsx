@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import CartItem from "./CartItem";
 import { IoIosRemoveCircle } from "react-icons/io";
 import { FaEject, FaRegHeart } from "react-icons/fa6";
-import Spinner from "../ui/Spinner";
 import useCartStore from "./useCartStore";
 
 // Dining Etiquette
