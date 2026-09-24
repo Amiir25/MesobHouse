@@ -29,21 +29,21 @@ const useCartStore = create(
             }),
 
             // Remove dish
-            removeDish: (id) => set((state) => {
-                cart: state.cart.filter(dish => dish.id !== id);
-            }),
+            removeDish: (id) => set((state) => ({
+                cart: state.cart.filter(dish => dish.id !== id),
+            })),
 
             // Increment
-            increment: (id) => set((state) => {
+            increment: (id) => set((state) => ({
                 cart: state.cart.map(dish =>
                     dish.id === id
                         ? { ...dish, qty: dish.qty + 1 }
                         : dish
                 )
-            }),
+            })),
 
             // Decrement
-            decrement: (id) => set((state) => {
+            decrement: (id) => set((state) => ({
                 cart: state.cart
                 .map(dish =>
                     dish.id === id
@@ -51,7 +51,7 @@ const useCartStore = create(
                         : dish
                 )
                 .filter((dish) => dish.qty > 0) // remove if qty reaches 0
-            }),
+            })),
 
             // Clear cart
             clearCart: () => set({ cart: [] }),
