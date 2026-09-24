@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import useFetchDishes from "../../hooks/useFetchDishes";
 import NotFound from "../../NotFound";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaBagShopping, FaCircle, FaCircleUp, FaFire, FaHeart, FaMinus, FaPercent, FaPlus, FaUsers } from "react-icons/fa6";
 import Button from "../../ui/Button";
 import DishImages from "./DishImages";
+import useCartStore from "../../cart/useCartStore";
 
 // Spicy level
 const spicyLevels = [
@@ -52,8 +53,26 @@ const sideAccents = [
 ];
 
 const DishDetailRightContent = ({ selectedDish }) => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+
+  const addDish = useCartStore(state => state.addDish);
+  const increment = useCartStore(state => state.increment);
+  const decrement = useCartStore(state => state.decrement);
+
+  const cartItem = useCartStore(state =>
+    state.cart.find(item => item.id === selectedDish.id)
+  );
+
+  const inCart = Boolean(cartItem);
+  const qty = cartItem?.qty ?? 0;
+
+  const handleOrder = () => {
+    addDish(selectedDish);
+  }
+
+  const handlePlus = () => {
+    if (inCart) increment(selectedDish.id);
+    else handleOrder();
+  }
 
   return (
     <div>
@@ -102,7 +121,7 @@ const DishDetailRightContent = ({ selectedDish }) => {
               <div
                 key={id}
                 className={`px-4 py-2 rounded
-                  ${selectedDish?.spiceLevel.includes(rank) ? "bg-brand text-light-red" : "bg-light-red text-gray-800"}`}
+                  ${selectedDish.spiceLevel.includes(rank) ? "bg-brand text-light-red" : "bg-light-red text-gray-800"}`}
               >
                 <div className="flex items-center justify-between">
                   <p className="font-semibold">{title}</p>
@@ -178,18 +197,18 @@ const DishDetailRightContent = ({ selectedDish }) => {
       {/* Buttons */}
       <section className="mt-8 flex items-center justify-between gap-4">
         <div className="flex items-center gap-6 bg-light-red w-fit py-1 px-2 rounded">
-          <button>
+          <button onClick={() => decrement(selectedDish.id)} disabled={!inCart}>
             <FaMinus />
           </button>
-          <p className="font-semibold text-dark-red text-lg">1</p>
-          <button>
+          <p className="font-semibold text-dark-red text-lg">{qty}</p>
+          <button onClick={handlePlus}>
             <FaPlus />
           </button>
         </div>
         <div>
-          <Button color="brand">
+          <Button color="brand" onClick={handleOrder} disabled={inCart}>
             <FaBagShopping />
-            <span>Add to Order . ETB 650</span>
+            <span>Add to Order . ETB { selectedDish.priceETB }</span>
           </Button>
         </div>
       </section>

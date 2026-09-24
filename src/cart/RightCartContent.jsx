@@ -1,6 +1,5 @@
 import React from "react";
 import PriceLists from "./PriceLists";
-import { useCart } from "./CartContext";
 import Button from "../ui/Button";
 import { FaArrowRight, FaMoneyBill } from "react-icons/fa6";
 import { SiMealie } from "react-icons/si";
@@ -8,6 +7,7 @@ import { RiCupFill } from "react-icons/ri";
 import { GiHotMeal } from "react-icons/gi";
 import { IoMdLock } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import useCartStore from "./useCartStore";
 
 // Bottom list
 const bottomList = [
@@ -32,7 +32,7 @@ const bottomList = [
 ];
 
 const RightCartContent = () => {
-  const { total } = useCart();
+  const total = useCartStore(state => state.total());
   const navigate = useNavigate();
 
   return (

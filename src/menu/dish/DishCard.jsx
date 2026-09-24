@@ -2,17 +2,17 @@ import React from "react";
 import Button from "../../ui/Button";
 import { FaCartPlus } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../cart/CartContext";
+import useCartStore from "../../cart/useCartStore";
 
 const DishCard = ({ dish, onDishClick }) => {
   const { slug, nameEn, priceETB, description, imagePath } = dish;
-  const { onAddToCart } = useCart();
+  const addDish = useCartStore(state => state.addDish);
   const navigate = useNavigate();
 
   // Add to cart
   const handleQuickAdd = (dish, e) => {
     e.stopPropagation();
-    onAddToCart("add", dish);
+    addDish(dish);
   };
 
   return (

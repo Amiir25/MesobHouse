@@ -21,7 +21,6 @@ const App = () => {
     <Suspense fallback={<Spinner />}>
       <PopupProvider>
         <AuthProvider>
-          <CartProvider>
             <Routes>
               <Route path="/" element={<RootLayout />}>
                 {/* Public Routes */}
@@ -58,7 +57,6 @@ const App = () => {
                 />
               </Route>
             </Routes>
-          </CartProvider>
         </AuthProvider>
       </PopupProvider>
     </Suspense>

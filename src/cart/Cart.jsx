@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { LuBadgeCheck } from "react-icons/lu";
-import { useCart } from "./CartContext";
 import Button from "../ui/Button";
 import LeftCartContent from "./LeftCartContent";
 import RightCartContent from "./RightCartContent";
@@ -9,10 +8,13 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "../ui/Spinner";
 import ClearCartConfirmation from "./ClearCartConfirmation";
 import EmptyCartState from "./EmptyCartState";
+import useCartStore from "./useCartStore";
 
 const Cart = () => {
-  const { cart, onAddToCart } = useCart();
+  const cart = useCartStore(state => state.cart);
+  const clearCart = useCartStore(state => state.clearCart);
   const navigate = useNavigate();
+
   const [showSpinner, setShowSpinner] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -22,7 +24,7 @@ const Cart = () => {
     setShowSpinner(true);
 
     setTimeout(() => {
-      onAddToCart("clear");
+      clearCart();
       setShowSpinner(false);
       navigate("/menu");
     }, 2000);

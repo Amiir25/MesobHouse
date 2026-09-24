@@ -1,8 +1,8 @@
 import React from "react";
-import { useCart } from "../cart/CartContext";
+import useCartStore from "../cart/useCartStore";
 
 const CheckoutCartItems = () => {
-  const { cart } = useCart();
+  const cart = useCartStore(state => state.cart);
   
   return (
     <section className="mt-4 flex flex-col gap-8">

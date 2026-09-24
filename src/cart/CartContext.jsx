@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 import Spinner from "../ui/Spinner";
 
-const CartContext = createContext();
+const CarContext = createContext();
 
-const CartProvider = ({ children }) => {
+const CarProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("savedCart");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -70,10 +70,10 @@ const CartProvider = ({ children }) => {
   );
 };
 
-export default CartProvider;
+export default CarProvider;
 
 // useCart
-export const useCart = () => {
+export const useCar = () => {
   const context = useContext(CartContext);
 
   if (!context) throw new Error("Error getting cart data!");

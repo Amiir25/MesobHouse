@@ -1,12 +1,12 @@
 import React from "react";
-import { useCart } from "../cart/CartContext";
 import { useNavigate } from "react-router-dom";
 import EmptyCartState from "../cart/EmptyCartState";
 import LeftCheckoutContent from "./LeftCheckoutContent";
 import RightCheckoutContent from "./RightCheckoutContent";
+import useCartStore from "../cart/useCartStore";
 
 const Checkout = () => {
-  const { cart } = useCart();
+  const cart = useCartStore(state => state.cart);
   const navigate = useNavigate();
 
   // Empty cart state

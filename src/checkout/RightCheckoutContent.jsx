@@ -5,12 +5,14 @@ import { BiCheckShield } from "react-icons/bi";
 import Button from "../ui/Button";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import { useCart } from "../cart/CartContext";
 import CheckoutMessage from "./CheckoutMessage";
 import Spinner from "../ui/Spinner";
+import useCartStore from "../cart/useCartStore";
 
 const RightCheckoutContent = () => {
-  const { cart, onAddToCart, subtotal, total } = useCart();
+  const subtotal = useCartStore(state => state.subtotal());
+  const total = useCartStore(state => state.total());
+  const clearCart = useCartStore(state => state.clearCart);
   const navigate = useNavigate();
 
   //
@@ -32,7 +34,8 @@ const RightCheckoutContent = () => {
     setShowSpinner(true);
     setTimeout(() => {
         setShowSpinner(false);
-        onAddToCart("clear");
+        // onAddToCart("clear");
+        clearCart();
         navigate("/menu");
     }, 1000);
   };

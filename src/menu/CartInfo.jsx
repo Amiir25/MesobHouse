@@ -1,12 +1,15 @@
 import React from "react";
-import { useCart } from "../cart/CartContext";
 import Button from "../ui/Button";
 import { FaArrowRight, FaBagShopping, FaCircleXmark } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import useCartStore from "../cart/useCartStore";
 
 const CartInfo = () => {
-    const { cart, total, onAddToCart } = useCart();
+    const cart = useCartStore(state => state.cart);
+    const total = useCartStore(state => state.total());
+    const clearCart = useCartStore(state => state.clearCart);
     const navigate = useNavigate();
+
   return (
     <>
       {cart.length !== 0 && (
@@ -24,7 +27,7 @@ const CartInfo = () => {
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
-            <FaCircleXmark className="text-xl text-white" onClick={() => onAddToCart("clear")}/>
+            <FaCircleXmark className="text-xl text-white" onClick={() => clearCart()}/>
             <Button color="brand" onClick={() => navigate("/cart")}>
               Proceed to Cart
               <FaArrowRight />

@@ -1,10 +1,13 @@
 import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import { useCart } from "./CartContext";
 import { MdDeleteForever } from "react-icons/md";
+import useCartStore from "./useCartStore";
 
 const CartItem = () => {
-  const { cart, onAddToCart } = useCart();
+  const cart = useCartStore(state => state.cart);
+  const increment = useCartStore(state => state.increment);
+  const decrement = useCartStore(state => state.decrement);
+  const removeDish = useCartStore(state => state.removeDish);
 
   return (
     <section className="mt-4 flex flex-col gap-8">
@@ -38,7 +41,7 @@ const CartItem = () => {
               <p className="font-bold text-brand">ETB {priceETB}</p>
               <div className="flex items-center gap-6 bg-light-red w-fit py-1 px-2 rounded">
                 <button
-                  onClick={() => onAddToCart("sub", item)}
+                  onClick={() => decrement(id)}
                   className="bg-white px-2 py-1 rounded"
                 >
                   <FaMinus />
@@ -47,13 +50,13 @@ const CartItem = () => {
                   {item.qty}
                 </p>
                 <button
-                  onClick={() => onAddToCart("add", item)}
+                  onClick={() => increment(id)}
                   className="bg-white px-2 py-1 rounded"
                 >
                   <FaPlus />
                 </button>
               </div>
-              <button onClick={() => onAddToCart("remove", item)}>
+              <button onClick={() => removeDish(id)}>
                 <MdDeleteForever className="text-2xl text-rose-500" />
               </button>
             </section>

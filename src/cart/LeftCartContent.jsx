@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import CartItem from "./CartItem";
 import { IoIosRemoveCircle } from "react-icons/io";
-import { useCart } from "./CartContext";
 import { FaEject, FaRegHeart } from "react-icons/fa6";
 import Spinner from "../ui/Spinner";
+import useCartStore from "./useCartStore";
 
 // Dining Etiquette
 const etiquttes = [
@@ -21,7 +21,7 @@ const etiquttes = [
 ];
 
 const LeftCartContent = ({ onClearTable }) => {
-  const { cart } = useCart();
+  const cart = useCartStore(state => state.cart);
 
   return (
     <div className="lg:col-span-2">

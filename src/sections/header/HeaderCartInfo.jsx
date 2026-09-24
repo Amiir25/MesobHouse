@@ -1,15 +1,18 @@
 import React from "react";
-import { useCart } from "../../cart/CartContext";
 import { useNavigate } from "react-router-dom";
 import { GrCart } from "react-icons/gr";
+import useCartStore from "../../cart/useCartStore";
 
 const HeaderCartInfo = () => {
-  const { cart, total } = useCart();
+  const cart = useCartStore(state => state.cart);
+  const total = useCartStore(state => state.total());
   const navigate = useNavigate();
+
+  // if (!cart) return null;
 
   return (
     <>
-      {cart.length !== 0 && (
+      {cart?.length !== 0 && (
         <section
           className="flex items-center gap-1"
           onClick={() => navigate("/cart")}

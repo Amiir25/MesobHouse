@@ -1,11 +1,14 @@
 import React from "react";
-import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { LuTicketCheck } from "react-icons/lu";
+import useCartStore from "./useCartStore";
 
 const PriceLists = () => {
-  const { cart, subtotal, vat, total } = useCart();
+  const cart = useCartStore(state => state.cart);
+  const subtotal = useCartStore(state => state.subtotal());
+  const vat = useCartStore(state => state.vat());
+  const total = useCartStore(state => state.total());
   const navigate = useNavigate();
 
   // Basket Ladger section
