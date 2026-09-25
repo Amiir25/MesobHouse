@@ -34,7 +34,6 @@ const RightCheckoutContent = () => {
     setShowSpinner(true);
     setTimeout(() => {
         setShowSpinner(false);
-        // onAddToCart("clear");
         clearCart();
         navigate("/menu");
     }, 1000);
