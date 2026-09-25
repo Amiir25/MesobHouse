@@ -48,7 +48,7 @@ const UserProfile = () => {
       >
         <div className="text-gray-900 font-semibold tracking-wider">
           <p>{name}</p>
-          <p>{email}</p>
+          <p className="text-[8px]">{email}</p>
         </div>
         <hr className="my-4 text-gray-400" />
         <Button color="light-red" onClick={handleLogout}>
