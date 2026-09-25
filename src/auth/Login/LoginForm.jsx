@@ -81,9 +81,10 @@ const LoginForm = ({ activeBtn }) => {
   return (
     <div>
       {/* Demo helper message */}
-      <p className="text-sm text-gray-500 mt-2 text-center">
+      <p className="text-sm text-blue-700 bg-blue-100 py-2 mt-8 p-2 rounded">
         Demo account is pre-filled. Just click <strong>Sign In</strong>.
       </p>
+      
       <form onSubmit={handleSubmit(onSubmit)} className="my-8">
         {/* Phone */}
         <section className={`${activeBtn !== "phone" && "hidden"} `}>
