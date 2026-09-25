@@ -10,18 +10,19 @@ const CheckoutForm = () => {
 
   return (
     <>
-      {/* Contact & Guest Details */}
-      <section className="mt-8">
-        <header className="flex items-center justify-between">
-          <h2 className="flex items-center gap-2">
-            <LuSquareUser className="text-brand" />
-            <span className="text-gray-800">1. Contact & Guest Details</span>
-          </h2>
-          <p className="text-[10px] md:text-sx lg:text-sm bg-light-yellow text-dark-yellow px-2 py-1 rounded-xl">
-            Habesha Hospitality
-          </p>
-        </header>
-        <form action="">
+      <form className="mt-8">
+        {/* Contact & Guest Details */}
+        <section action="">
+          <header className="flex items-center justify-between">
+            <h2 className="flex items-center gap-2">
+              <LuSquareUser className="text-brand" />
+              <span className="text-gray-800">1. Contact & Guest Details</span>
+            </h2>
+            <p className="text-[10px] md:text-sx lg:text-sm bg-light-yellow text-dark-yellow px-2 py-1 rounded-xl">
+              Habesha Hospitality
+            </p>
+          </header>
+
           <div className="flex flex-col md:flex-row gap-2 mt-4">
             <label htmlFor="name" className="text-xs flex flex-col gap-1">
               RECIPIENT NAME
@@ -54,52 +55,53 @@ const CheckoutForm = () => {
               className="p-2 bg-light-red rounded"
             />
           </label>
-        </form>
-      </section>
+        </section>
 
-      {/* Delivery Location */}
-      <section className="mt-8">
-        <header className="flex items-center justify-between">
-          <h2 className="flex items-center gap-2">
-            <MdMyLocation className="text-brand" />
-            <span className="text-gray-800">2. Delivery Location</span>
-          </h2>
-          <p className="text-[10px] md:text-xs lg:text-sm bg-green-50 text-green-900 px-2 py-1 rounded-xl flex items-center gap-1">
-            <BiCloudDownload />
-            <span>Insulated Mesob Carrier</span>
-          </p>
-        </header>
-        <div className="flex flex-col md:flex-row gap-2 mt-4">
-          <label htmlFor="sub-city" className="text-xs flex flex-col gap-1">
-            SUB-CITY / NEIGHBORHOOD
-            <input
-              type="text"
-              id="sub-city"
-              className="p-2 bg-light-red rounded"
-            />
-          </label>
-          <label htmlFor="street" className="text-xs flex flex-col gap-1">
+        {/* Delivery Location */}
+        <section className="mt-8">
+          <header className="flex items-center justify-between">
+            <h2 className="flex items-center gap-2">
+              <MdMyLocation className="text-brand" />
+              <span className="text-gray-800">2. Delivery Location</span>
+            </h2>
+            <p className="text-[10px] md:text-xs lg:text-sm bg-green-50 text-green-900 px-2 py-1 rounded-xl flex items-center gap-1">
+              <BiCloudDownload />
+              <span>Insulated Mesob Carrier</span>
+            </p>
+          </header>
+          <div className="flex flex-col md:flex-row gap-2 mt-4">
+            <label htmlFor="sub-city" className="text-xs flex flex-col gap-1">
+              SUB-CITY
+              <input
+                type="text"
+                id="sub-city"
+                className="p-2 bg-light-red rounded"
+              />
+            </label>
+            <label htmlFor="street" className="text-xs flex flex-col gap-1">
+              NEIGHBORHOOD
+              <input
+                type="tel"
+                id="street"
+                className="p-2 bg-light-red rounded"
+              />
+            </label>
+          </div>
+          <label
+            htmlFor="landmark"
+            className="text-xs flex flex-col gap-1 mt-2 max-w-100"
+          >
             STREET, BUILDING, FLAT NO.
             <input
-              type="tel"
-              id="street"
+              type="email"
+              id="landmark"
               className="p-2 bg-light-red rounded"
             />
           </label>
-        </div>
-        <label
-          htmlFor="landmark"
-          className="text-xs flex flex-col gap-1 mt-2 max-w-100"
-        >
-          SPECIFIC LANDMARK / GATE INSTRUCTIONS
-          <input
-            type="email"
-            id="landmark"
-            className="p-2 bg-light-red rounded"
-          />
-        </label>
-        {/*  */}
-        <div className="mt-4">
+        </section>
+
+        {/* Dispatching time */}
+        <section className="mt-4">
           <h3 className="text-gray-800">DESIRED DISPATCH TIMING</h3>
           <div className="flex flex-col md:flex-row gap-2">
             <div className="flex items-baseline gap-2 bg-light-red px-1 py-2 rounded">
@@ -135,8 +137,8 @@ const CheckoutForm = () => {
               Bole Zone Priority
             </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </form>
     </>
   );
 };
