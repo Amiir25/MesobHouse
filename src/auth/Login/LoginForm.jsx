@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -25,24 +25,47 @@ const LoginForm = ({ activeBtn }) => {
   // Conditional login schema
   const schema = activeBtn === "phone" ? phoneLoginSchema : emailLoginSchema;
 
+  //* Replaced by demo logic
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors, isSubmitting },
+  // } = useForm({
+  //   resolver: zodResolver(schema),
+  // });
+
+  //* Demo logic
+  // ==================================== //
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(schema),
+    defaultValues: {
+      phone: "",
+      email: "",
+      password: "",
+    },
   });
+
+  // Pre-fill demo credentials
+  useEffect(() => {
+    setValue("phone", "0912345678");
+    setValue("email", "demo@mesobhouse.com");
+    setValue("password", "demo123");
+  }, [setValue]);
+  // ==================================== //
 
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const success =
-      activeBtn === "phone"
-        ? handlePhoneLogin(data)
-        : handleEmailLogin(data);
+      activeBtn === "phone" ? handlePhoneLogin(data) : handleEmailLogin(data);
 
     if (!success) return;
-    
+
     setShowSpinner(true);
 
     setTimeout(() => {
@@ -57,6 +80,10 @@ const LoginForm = ({ activeBtn }) => {
 
   return (
     <div>
+      {/* Demo helper message */}
+      <p className="text-sm text-gray-500 mt-2 text-center">
+        Demo account is pre-filled. Just click <strong>Sign In</strong>.
+      </p>
       <form onSubmit={handleSubmit(onSubmit)} className="my-8">
         {/* Phone */}
         <section className={`${activeBtn !== "phone" && "hidden"} `}>
@@ -194,7 +221,6 @@ const LoginForm = ({ activeBtn }) => {
 
       {/* Spinner */}
       {showSpinner && <Spinner />}
-
     </div>
   );
 };

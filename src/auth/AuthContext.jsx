@@ -6,11 +6,35 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const { handlePopup } = usePopup();
 
+  //* Replaced by demo logic
   // User Database
+  // const [userDB, setUserDB] = useState(() => {
+  //   const storedUsers = localStorage.getItem("userDB");
+  //   return storedUsers ? JSON.parse(storedUsers) : [];
+  // });
+
+  //* Demo logic
+  // ==================================== //
   const [userDB, setUserDB] = useState(() => {
     const storedUsers = localStorage.getItem("userDB");
-    return storedUsers ? JSON.parse(storedUsers) : [];
+
+    if (storedUsers) {
+      return JSON.parse(storedUsers);
+    }
+
+    const demoUser = {
+      name: "Demo",
+      phone: "0912345678",
+      email: "demo@mesobhouse.com",
+      password: "demo123",
+    };
+
+    localStorage.setItem("userDB", JSON.stringify([demoUser]));
+    return [demoUser];
   });
+
+  // ==================================== //
+  
   // Current user
   const [currentUser, setCurrentUser] = useState(() => {
     const savedUser = localStorage.getItem("currentUser");
@@ -106,7 +130,7 @@ const AuthProvider = ({ children }) => {
     // Clear local storage
     localStorage.removeItem("savedCart");
     localStorage.removeItem("currentUser");
-  }
+  };
 
   // Update userDB
   useEffect(() => {
