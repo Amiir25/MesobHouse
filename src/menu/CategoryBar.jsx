@@ -7,7 +7,7 @@ const categories = [
   { id: 2, text: "Tibs & Grills" },
   { id: 3, text: "Raw & Cured Delicacies / Kitfo" },
   { id: 4, text: "Fasting & Vegan / Tsom" },
-  { id: 5, text: "Beverages & Tej" },
+  { id: 5, text: "Hot Drinks" },
 ];
 
 const CategoryBar = ({ selectedCat, onChangeCat }) => {
