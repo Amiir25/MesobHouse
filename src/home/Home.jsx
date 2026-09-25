@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <main className="px-2 md:px-8 lg:px-18 mt-8">
       {/* Top text */}
-      <section className="mx-2 flex items-center justify-center lg:justify-between gap-4 text-xs lg:text-sm mt-4 bg-light-red p-2 rounded-2xl">
+      <section className="mx-2 flex items-center justify-center lg:justify-between gap-4 text-[10px] mt-4 bg-light-red p-1 rounded-2xl tracking-wider">
         <div className="flex flex-col lg:flex-row lg:items-center gap-x-4">
           <FaCircleCheck className="text-dark-yellow mx-12" />
           <p className="text-dark-red">100% PURE TEFF</p>

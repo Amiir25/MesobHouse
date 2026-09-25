@@ -54,9 +54,6 @@ const heroData = [
   },
 ];
 
-// Images
-const images = [1, 2, 3, 4, 5, 6];
-
 const HomeHero = () => {
   const images = [1, 2, 3, 4, 5, 6];
   const [current, setCurrent] = useState(0);
@@ -73,7 +70,7 @@ const HomeHero = () => {
     <section className="mt-8 md:grid grid-cols-2 lg:gap-x-20">
       {/* Hero Left */}
       <div>
-        <p className="bg-light-red text-dark-red text-[10px] md:text-sm px-2 py-1 rounded-xl w-fit flex items-center gap-2">
+        <p className="bg-light-red text-dark-red text-[10px] px-2 py-1 rounded-xl w-fit flex items-center gap-2 tracking-wider">
           <FaCircleDot />
           <span>TRADITIONAL HABESHA HEARTH</span>
         </p>
