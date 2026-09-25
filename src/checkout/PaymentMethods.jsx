@@ -46,11 +46,10 @@ const PaymentMethods = () => {
       <header className="flex items-center justify-between">
         <h2 className="flex items-center gap-2">
           <MdMyLocation className="text-brand" />
-          <span className="text-gray-800">2. Delivery Location</span>
+          <span className="text-gray-800">3. Payment Methods</span>
         </h2>
-        <p className="text-[10px] bg-green-50 text-green-900 px-2 py-1 rounded-xl flex items-center gap-1">
-          <BiCloudDownload />
-          <span>Insulated Mesob Carrier</span>
+        <p className="text-[10px] lg:text-xs text-dark-red px-2 py-1 rounded-xl flex items-center gap-1 tracking-wide">
+          <span>Encrypted & Direct</span>
         </p>
       </header>
       <div className="flex flex-col gap-2 mt-2">
