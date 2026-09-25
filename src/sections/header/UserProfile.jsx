@@ -3,17 +3,22 @@ import { useAuth } from "../../auth/AuthContext";
 import Button from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../ui/Spinner";
+import useCartStore from "../../cart/useCartStore.js";
 
 const UserProfile = () => {
   const { currentUser, logout } = useAuth();
-  const { name, phone, email } = currentUser;
+  const { name, email } = currentUser;
   const navigate = useNavigate();
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
 
+  // Clear cart after logout
+  const clearCart = useCartStore(state => state.clearCart);
+
   //   Handle Logout
   const handleLogout = () => {
+    clearCart();
     setShowSpinner(true);
 
     navigate("/", { replace: true });
