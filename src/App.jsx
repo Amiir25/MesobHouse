@@ -1,14 +1,15 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
-import Home from "./home/Home";
-import Login from "./auth/Login/Login";
-import Register from "./auth/Register/Register";
+
+const Home = lazy(() => import ("./home/Home"));
+const Login = lazy(() => import ("./auth/Login/Login"));
+const Register = lazy(() => import ("./auth/Register/Register"));
 const Menu = lazy(() => import("./menu/Menu"));
-import DishDetail from "./menu/dish/DishDetail";
+const DishDetail = lazy(() => import("./menu/dish/DishDetail"));
 const Cart = lazy(() => import("./cart/Cart"));
-import Checkout from "./checkout/Checkout";
-import NotFound from "./NotFound";
+const Checkout = lazy(() => import("./checkout/Checkout"));
+const NotFound = lazy(() => import("./NotFound"));
 
 import RequireAuth from "./auth/RequireAuth";
 import AuthProvider from "./auth/AuthContext";
