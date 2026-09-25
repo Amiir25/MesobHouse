@@ -55,7 +55,7 @@ const LoginLeftContent = () => {
       {/* Image */}
       <div className="relative">
         <img
-          src="/src/assets/login-background.png"
+          src="/src/assets/login-hero-image.webp"
           alt=""
           className="w-full h-full object-cover"
         />

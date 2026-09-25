@@ -22,7 +22,7 @@ const LoginRightContent = () => {
       <div className="mt-8 flex flex-col lg:flex-row justify-center lg:justify-start gap-2">
         <Button color="light-red">
           <img
-            src="/src/assets/telebirr-logo.jpg"
+            src="/src/assets/telebirr-logo.webp"
             alt=""
             className="w-8 h-8 rounded-full"
           />
