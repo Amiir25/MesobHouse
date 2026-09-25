@@ -22,7 +22,7 @@
                 "Ginger"
             ],
             "servings": "Serves 1-2 generously",
-            "imagePath": "/src/assets/images/doro-wat"
+            "imagePath": "/images/dishes/doro-wat"
         },
         {
             "id": "dish-6",
@@ -44,7 +44,7 @@
                 "Awaze Paste"
             ],
             "servings": "Serves 1",
-            "imagePath": "/src/assets/images/siga-derek-tibs"
+            "imagePath": "/images/dishes/siga-derek-tibs"
         },
         {
             "id": "dish-10",
@@ -64,7 +64,7 @@
                 "Cardamom seed powder"
             ],
             "servings": "Serves 1",
-            "imagePath": "/src/assets/images/prime-beef-kitfo"
+            "imagePath": "/images/dishes/prime-beef-kitfo"
         },
         {
             "id": "dish-13",
@@ -85,7 +85,7 @@
                 "Cabbage & Potatoes"
             ],
             "servings": "Serves 1-2 generously",
-            "imagePath": "/src/assets/images/full-vegan-beyaynetu"
+            "imagePath": "/images/dishes/full-vegan-beyaynetu"
         }
     ]
 }

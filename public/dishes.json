@@ -22,7 +22,7 @@
                 "Ginger"
             ],
             "servings":"Serves 1-2 generously",
-            "imagePath": "/src/assets/images/doro-wat"
+            "imagePath": "/images/dishes/doro-wat"
         },
         {
             "id":"dish-2",
@@ -43,7 +43,7 @@
                 "Garlic"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/siga-wat"
+            "imagePath": "/images/dishes/siga-wat"
         },
         {
             "id":"dish-3",
@@ -64,7 +64,7 @@
                 "Garlic"
             ],
             "servings":"Serves 1-2",
-            "imagePath": "/src/assets/images/beg-alicha-wat"
+            "imagePath": "/images/dishes/beg-alicha-wat"
         },
         {
             "id":"dish-4",
@@ -86,7 +86,7 @@
                 "Green Chili"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/shiro-tegamino"
+            "imagePath": "/images/dishes/shiro-tegamino"
         },
         {
             "id":"dish-5",
@@ -107,7 +107,7 @@
                 "Garlic"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/shiro-bozena"
+            "imagePath": "/images/dishes/shiro-bozena"
             
         },
         {
@@ -130,7 +130,7 @@
                 "Awaze Paste"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/siga-derek-tibs"
+            "imagePath": "/images/dishes/siga-derek-tibs"
         },
         {
             "id":"dish-7",
@@ -151,7 +151,7 @@
                 "Butter"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/awaze-lamb-tibs"
+            "imagePath": "/images/dishes/awaze-lamb-tibs"
         },
         {
             "id":"dish-8",
@@ -172,7 +172,7 @@
                 "Shallots"
             ],
             "servings":"Serves 1-2",
-            "imagePath": "/src/assets/images/quanta-firfir"
+            "imagePath": "/images/dishes/quanta-firfir"
         },
         {
             "id":"dish-9",
@@ -193,7 +193,7 @@
                 "Mitmita"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/chornake-fish-tibs"
+            "imagePath": "/images/dishes/chornake-fish-tibs"
         },
         {
             "id":"dish-10",
@@ -213,7 +213,7 @@
                 "Cardamom seed powder"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/prime-beef-kitfo"
+            "imagePath": "/images/dishes/prime-beef-kitfo"
         },
         {
             "id":"dish-11",
@@ -233,7 +233,7 @@
                 "Awaze dip"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/gored-gored"
+            "imagePath": "/images/dishes/gored-gored"
         },
         {
             "id":"dish-12",
@@ -254,7 +254,7 @@
                 "Niter Kibbeh"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/kitfo-dulet"
+            "imagePath": "/images/dishes/kitfo-dulet"
         },
         {
             "id":"dish-13",
@@ -275,7 +275,7 @@
                 "Cabbage & Potatoes"
             ],
             "servings":"Serves 1-2 generously",
-            "imagePath": "/src/assets/images/full-vegan-beyaynetu"
+            "imagePath": "/images/dishes/full-vegan-beyaynetu"
         },
         {
             "id":"dish-14",
@@ -296,7 +296,7 @@
                 "Sunflower oil"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/misir-wat"
+            "imagePath": "/images/dishes/misir-wat"
         },
         {
             "id":"dish-15",
@@ -317,7 +317,7 @@
                 "White onions"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/kik-alicha-wat"
+            "imagePath": "/images/dishes/kik-alicha-wat"
         },
         {
             "id":"dish-16",
@@ -338,7 +338,7 @@
                 "Cold-pressed oil"
             ],
             "servings":"Serves 1",
-            "imagePath": "/src/assets/images/gomen-collards"
+            "imagePath": "/images/dishes/gomen-collards"
         },
         {
             "id":"dish-17",
@@ -359,7 +359,7 @@
                 "Jalapeño"
             ],
             "servings":"Serves 1 (Great as side)",
-            "imagePath": "/src/assets/images/fresh-timatim-fitfit"
+            "imagePath": "/images/dishes/fresh-timatim-fitfit"
         },
         {
             "id":"dish-19",
@@ -378,7 +378,7 @@
                 "Cardamom"
             ],
             "servings":"Ceremonial Sini Cup",
-            "imagePath": "/src/assets/images/jebena-spiced-coffee"
+            "imagePath": "/images/dishes/jebena-spiced-coffee"
         },
         {
             "id":"dish-20",
@@ -399,7 +399,7 @@
                 "Ginger root"
             ],
             "servings":"Served hot with raw cane sugar",
-            "imagePath": "/src/assets/images/spiced-habesha-chai"
+            "imagePath": "/images/dishes/spiced-habesha-chai"
         }
     ]
 }
