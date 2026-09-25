@@ -117,7 +117,7 @@ const HomeHero = () => {
         {images.map((n, i) => (
           <img
             key={n}
-            src={`/src/assets/images/home-page-images/image-${n}.png`}
+            src={`/src/assets/images/home-page-images/image-${n}.webp`}
             alt=""
             className={`col-start-1 row-start-1 w-full h-full transition-opacity duration-2000 ease-in-out
             ${ i === current ? "opacity-100" : "opacity-0" }`}

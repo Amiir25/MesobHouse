@@ -20,7 +20,7 @@ const DishCard = ({ dish, onDishClick }) => {
       onClick={() => navigate(`/menu/${slug}`)}
     >
       <img
-        src={`${imagePath}/image-main.png`}
+        src={`${imagePath}/image-main.webp`}
         alt={nameEn}
         className="rounded-xl lg:hover:scale-105 transition-scale duration-500"
       />

@@ -21,7 +21,7 @@ const CartItem = () => {
             <section className="flex flex-col lg:flex-row gap-4">
               <div className="h-30 lg:h-auto w-full lg:w-40">
                 <img
-                  src={`${imagePath}/image-main.png`}
+                  src={`${imagePath}/image-main.webp`}
                   alt=""
                   className="w-full h-full object-cover lg:object-contain"
                 />

@@ -6,7 +6,7 @@ const DishImages = ({ selectedDish }) => {
     <section className="mb-8 w-86 lg:w-full mx-auto">
       {/* Big image */}
       <img
-        src={`${selectedDish?.imagePath}/image-main.png`}
+        src={`${selectedDish?.imagePath}/image-main.webp`}
         alt=""
         className="rounded"
       />
@@ -16,7 +16,7 @@ const DishImages = ({ selectedDish }) => {
         {[1, 2, 3, 4, 5, 6].map((n) => (
           <img
             key={n}
-            src={`${selectedDish?.imagePath}/image-${n}.png`}
+            src={`${selectedDish?.imagePath}/image-${n}.webp`}
             alt=""
             className="rounded shrink-0 w-30"
           />
