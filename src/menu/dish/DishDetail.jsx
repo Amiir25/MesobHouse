@@ -1,7 +1,7 @@
 import React from "react";
 import useFetchDishes from "../../hooks/useFetchDishes";
-import { useParams } from "react-router-dom";
-import { FaHandHoldingHeart } from "react-icons/fa6";
+import { useNavigate, useParams } from "react-router-dom";
+import { FaArrowLeft, FaHandHoldingHeart } from "react-icons/fa6";
 import Button from "../../ui/Button";
 import NotFound from "../../NotFound";
 import DishDetailLeftContent from "./DishDetailLeftContent";
@@ -12,6 +12,7 @@ const DishDetail = () => {
   const { slug } = useParams();
   const { dishes, loading, error } = useFetchDishes();
   const selectedDish = dishes.find((dish) => dish.slug === slug);
+  const navigate = useNavigate();
 
   if (loading || (dishes.length === 0 && !error)) {
     return (
@@ -43,8 +44,11 @@ const DishDetail = () => {
   }
 
   return (
-    <main className="px-2 md:px-8 lg:px-18 mt-18">
-      <section className="grid md:grid-cols-2 md:gap-6 lg:gap-12">
+    <main className="px-2 md:px-8 lg:px-18 mt-4 lg:mt-10">
+      {/* Back arrow */}
+      <FaArrowLeft className="mb-8 ml-2 lg:text-lg cursor-pointer" onClick={() => navigate(-1)}/>
+      
+      <section className="grid md:grid-cols-2 md:gap-6 lg:gap-12 mt-4">
         <DishDetailLeftContent selectedDish={selectedDish} />
         <DishDetailRightContent selectedDish={selectedDish} />
       </section>
