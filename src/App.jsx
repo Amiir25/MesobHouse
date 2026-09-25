@@ -15,11 +15,29 @@ import AuthProvider from "./auth/AuthContext";
 import PopupProvider from "./ui/PopupContext";
 import Spinner from "./ui/Spinner";
 
+import { ErrorBoundary } from "react-error-boundary";
+
+function ErrorFallback({ error, resetErrorBoundary }) {
+  return (
+    <div className="p-8 text-center">
+      <h2 className="text-xl font-bold text-red-600">Something went wrong</h2>
+      <p className="mt-2 text-sm text-gray-500">{error.message}</p>
+      <button
+        onClick={resetErrorBoundary}
+        className="mt-4 px-4 py-2 bg-brand text-white rounded"
+      >
+        Try again
+      </button>
+    </div>
+  );
+}
+
 const App = () => {
   return (
     <Suspense fallback={<Spinner />}>
-      <PopupProvider>
-        <AuthProvider>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <PopupProvider>
+          <AuthProvider>
             <Routes>
               <Route path="/" element={<RootLayout />}>
                 {/* Public Routes */}
@@ -56,8 +74,9 @@ const App = () => {
                 />
               </Route>
             </Routes>
-        </AuthProvider>
-      </PopupProvider>
+          </AuthProvider>
+        </PopupProvider>
+      </ErrorBoundary>
     </Suspense>
   );
 };
