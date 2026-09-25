@@ -5,15 +5,15 @@ import Button from "../ui/Button";
 const gurshaData = [
   {
     id: 1,
-    tag: "HOUSE-FERMENTED",
+    tag: "HOUSE-ROASTED",
     tagColor: "bg-yellow-100 text-yellow-900",
     price: 350,
     priceColor: "text-dark-yellow",
-    title: "Golden Tej (Honey Wine)",
+    title: "Yirgacheffe Pour-Over",
     description:
-      "Crafted in-house using raw Ethiopian wild honey and dried Gesho (indigenous hops), cold-aged for 21 days in glass carafes (Berele).",
-    info: "500ml Carafe . 11% ABV",
-    button: "Add Carafe",
+      "Single-origin Ethiopian coffee from the highlands of Yirgacheffe, light-roasted in-house to highlight bright floral and citrus notes, served as a slow pour-over.",
+    info: "250ml . Single Origin",
+    button: "Add Cup",
   },
   {
     id: 2,
