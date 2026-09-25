@@ -2,7 +2,7 @@
 export async function getDishes(signal) {
     try {
         // Artifical delay
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         
         // const res = await fetch("https://addis-eats-backend.onrender.com/menu/", { signal });
         const res = await fetch("/dishes.json", { signal });
@@ -22,7 +22,7 @@ export async function getDishes(signal) {
 export async function getSpecials(signal) {
     try {
         // Artifical delay
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         // const res = await fetch("https://addis-eats-backend.onrender.com/menu/specials", { signal });
         const res = await fetch("/specials.json", { signal });
